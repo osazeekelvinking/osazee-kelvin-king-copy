@@ -1,0 +1,809 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Home</title>
+<!-- Custom Tracking Scripts -->
+
+<!-- FunnelCraft AI Dependencies -->
+<script src="https://cdn.tailwindcss.com"></script>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;900&family=Montserrat:wght@400;700&family=Playfair+Display:wght@400;700&family=Roboto:wght@400;700&family=Open+Sans:wght@400;700&family=Bebas+Neue&family=Oswald:wght@400;700&family=Lora:wght@400;700&family=Raleway:wght@400;700&family=Poppins:wght@400;700&family=Lato:wght@400;700&family=Cinzel:wght@400;700&family=Merriweather:wght@400;700&family=Pacifico&family=Outfit:wght@400;700&family=Kanit:wght@400;700&family=Righteous&family=Dancing+Script:wght@400;700&family=Libre+Baskerville:wght@400;700&family=Anton&family=Josefin+Sans:wght@400;700&family=Caveat:wght@400;700&family=Fira+Sans:wght@400;700&family=Quicksand:wght@400;700&family=Abril+Fatface&family=Lobster&family=Patrick+Hand&family=Comfortaa:wght@400;700&family=Unbounded:wght@400;700&family=Space+Grotesk:wght@400;700&display=swap" rel="stylesheet">
+<style>
+  html { scroll-behavior: smooth; }
+  body { font-family: 'Inter', sans-serif; }
+  /* Hide horizontal overflow without breaking sticky positioning */
+  html, body { overflow-x: clip; }
+</style>
+<script>
+  tailwind.config = {
+    darkMode: 'class',
+    theme: {
+      extend: {
+        colors: {
+          indigo: { 50: '#f5f7ff', 100: '#ebf0ff', 500: '#6366f1', 600: '#4f46e5', 700: '#4338ca', 900: '#312e81' },
+          slate: { 850: '#111827', 950: '#020617' }
+        }
+      }
+    }
+  }
+</script>
+</head>
+<body class="bg-white text-slate-900">
+
+<!-- Sticky Navigation -->
+<div id="sticky-navigation" class="contents"><!-- Montserrat Google Font -->
+<style>
+    @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;700;800&display=swap');
+    body { font-family: 'Montserrat', sans-serif; }
+    .neon-border { box-shadow: 0 0 10px rgba(16, 185, 129, 0.3), inset 0 0 5px rgba(16, 185, 129, 0.2); }
+    .grid-bg { background-image: radial-gradient(rgba(16, 185, 129, 0.1) 1px, transparent 1px); background-size: 30px 30px; }
+</style>
+
+<nav class="sticky top-0 z-[100] bg-slate-950/80 backdrop-blur-xl border-b border-emerald-500/20">
+    <div class="max-w-7xl mx-auto px-4 md:px-6">
+        <div class="flex items-center justify-between h-20">
+            <!-- Logo -->
+            <div class="flex-shrink-0 flex items-center">
+                <a href="#hero" class="flex items-center gap-2">
+                    <img src="https://jufjpzuzfftxyckfovmf.supabase.co/storage/v1/object/public/academy-attachments/Brand%20Elements/funnelcraftai%20logo%20white.svg" alt="FunnelCraft AI Logo" class="h-10 w-auto lg:font-[''Inter',_sans-serif']">
+                </a>
+            </div>
+
+            <!-- Desktop Navigation Links -->
+            <div class="hidden lg:flex items-center space-x-8">
+                <a href="#services" class="text-slate-300 hover:text-emerald-400 font-medium transition-colors">Services</a>
+                <a href="#projects" class="text-slate-300 hover:text-emerald-400 font-medium transition-colors">Portfolio</a>
+                <a href="#pricing" class="text-slate-300 hover:text-emerald-400 font-medium transition-colors">Pricing</a>
+                <a href="#contact" class="text-slate-300 hover:text-emerald-400 font-medium transition-colors">Contact Me</a>
+                <a href="#about" class="text-slate-300 hover:text-emerald-400 font-medium transition-colors">About Me</a>
+            </div>
+
+            <!-- CTA & Mobile Toggle -->
+            <div class="flex items-center gap-4">
+                <a href="#contact" class="px-5 py-2.5 bg-emerald-600 hover:bg-emerald-500 text-white text-sm font-bold rounded-full transition-all hover:scale-105 shadow-[0_0_15px_rgba(16,185,129,0.4)] whitespace-nowrap">
+                    Hire Me
+                </a>
+                
+                <!-- Mobile Hamburger Toggle -->
+                <label for="nav-toggle" class="lg:hidden cursor-pointer p-2 text-slate-300">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path>
+                    </svg>
+                </label>
+            </div>
+        </div>
+    </div>
+
+    <!-- Mobile Menu (Checkbox Hack) -->
+    <input type="checkbox" id="nav-toggle" class="hidden peer">
+    <div class="lg:hidden hidden peer-checked:block bg-slate-900 border-b border-emerald-500/20 animate-in slide-in-from-top duration-300">
+        <div class="px-4 pt-2 pb-6 space-y-1">
+            <a href="#services" class="block px-3 py-4 text-base font-medium text-slate-300 border-b border-slate-800">Services</a>
+            <a href="#projects" class="block px-3 py-4 text-base font-medium text-slate-300 border-b border-slate-800">Portfolio</a>
+            <a href="#pricing" class="block px-3 py-4 text-base font-medium text-slate-300 border-b border-slate-800">Pricing</a>
+            <a href="#contact" class="block px-3 py-4 text-base font-medium text-slate-300 border-b border-slate-800">Contact Me</a>
+            <a href="#about" class="block px-3 py-4 text-base font-medium text-slate-300">About Me</a>
+        </div>
+    </div>
+</nav></div>
+
+<!-- Hero Section -->
+<div id="hero-section" class="scroll-mt-20"><style>
+    @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap');
+</style>
+
+<section id="hero" class="relative min-h-screen flex items-center justify-center overflow-hidden bg-slate-950 pt-24 lg:pt-0 font-['Inter']">
+    <!-- Background Design -->
+    <div class="absolute top-0 left-0 w-full h-full pointer-events-none">
+        <div class="absolute top-[-10%] left-[-10%] w-[50%] h-[50%] bg-emerald-600/20 blur-[120px] rounded-full"></div>
+        <div class="absolute bottom-[-10%] right-[-10%] w-[50%] h-[50%] bg-blue-600/20 blur-[120px] rounded-full"></div>
+        <div class="absolute inset-0 opacity-20" style="background-image: radial-gradient(#334155 1px, transparent 1px); background-size: 40px 40px;"></div>
+    </div>
+
+    <div class="relative z-10 max-w-7xl mx-auto px-4 md:px-8 py-12 lg:py-20">
+        <div class="flex flex-col lg:flex-row items-center gap-16">
+            
+            <!-- Left Side: Content -->
+            <div class="w-full lg:w-3/5 space-y-8 text-center lg:text-left">
+                <!-- Trust Badge -->
+                <div class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-emerald-950/40 border border-emerald-500/30 text-emerald-400 text-xs md:text-sm font-bold tracking-wide uppercase">
+                    <span class="flex h-2 w-2 rounded-full bg-emerald-500 animate-ping"></span>
+                    Trusted by <span class="counter-val" data-target="750">0</span>+ Brands
+                </div>
+
+                <!-- Main Headline -->
+                <h1 class="text-5xl md:text-7xl font-extrabold text-white leading-[1.1] tracking-tight lg:text-white lg:font-[''Inter',_sans-serif'] lg:text-[65px] lg:tracking-tight">
+                    We Turn Brands Into <span class="text-transparent bg-clip-text bg-gradient-to-r from-emerald-400 to-cyan-400">Market Leaders</span> Guaranteed.
+                </h1>
+
+                <!-- Body Text -->
+                <p class="text-lg md:text-xl text-slate-400 max-w-2xl mx-auto lg:mx-0 leading-relaxed">
+                    Stop being the best kept secret. We build high performing funnels and write copy that turns strangers into loyal customers without the typical guesswork.
+                </p>
+
+                <!-- Social Stats Grid -->
+                <div id="stats-grid" class="grid grid-cols-2 md:grid-cols-3 gap-4 max-w-lg mx-auto lg:mx-0">
+                    <div class="p-4 bg-slate-900/40 backdrop-blur-sm rounded-2xl border border-slate-800">
+                        <p class="text-emerald-400 text-2xl font-bold"><span class="counter-val" data-target="750">0</span>+</p>
+                        <p class="text-slate-500 text-xs font-semibold uppercase">Stores Built</p>
+                    </div>
+                    <div class="p-4 bg-slate-900/40 backdrop-blur-sm rounded-2xl border border-slate-800">
+                        <p class="text-emerald-400 text-2xl font-bold"><span class="counter-val" data-target="4.9">0</span>/5</p>
+                        <p class="text-slate-500 text-xs font-semibold uppercase">Client Rating</p>
+                    </div>
+                    <div class="hidden md:block p-4 bg-slate-900/40 backdrop-blur-sm rounded-2xl border border-slate-800">
+                        <p class="text-emerald-400 text-2xl font-bold">$<span class="counter-val" data-target="2">0</span>M+</p>
+                        <p class="text-slate-500 text-xs font-semibold uppercase">Generated</p>
+                    </div>
+                </div>
+
+                <!-- Action Buttons -->
+                <div class="flex flex-col sm:flex-row items-center gap-5 pt-4">
+                    <a href="#projects" class="group relative w-full sm:w-auto px-10 py-5 bg-emerald-600 hover:bg-emerald-500 text-white font-bold rounded-2xl transition-all duration-300 hover:scale-105 text-lg text-center shadow-[0_0_30px_rgba(16,185,129,0.3)]">
+                        See My Work
+                        <span class="inline-block ml-2 group-hover:translate-x-1 transition-transform">→</span>
+                    </a>
+                    <a href="#contact" class="w-full sm:w-auto px-10 py-5 bg-slate-900/50 border-2 border-slate-700 text-white font-bold rounded-2xl hover:bg-slate-800 hover:border-emerald-500/50 transition-all text-lg text-center backdrop-blur-sm">
+                        Book Strategy Call
+                    </a>
+                </div>
+
+                <!-- Testimonial Peek -->
+                <div class="flex flex-col sm:flex-row items-center gap-4 pt-6 border-t border-slate-800/50">
+                    <div class="flex -space-x-3">
+                        <img src="https://placehold.co/100x100/10b981/ffffff?text=A" class="w-12 h-12 rounded-full border-4 border-slate-950 shadow-xl">
+                        <img src="https://placehold.co/100x100/3b82f6/ffffff?text=B" class="w-12 h-12 rounded-full border-4 border-slate-950 shadow-xl">
+                        <img src="https://placehold.co/100x100/8b5cf6/ffffff?text=C" class="w-12 h-12 rounded-full border-4 border-slate-950 shadow-xl">
+                        <div class="w-12 h-12 rounded-full border-4 border-slate-950 bg-emerald-900 flex items-center justify-center text-xs text-emerald-400 font-bold shadow-xl">+750</div>
+                    </div>
+                    <p class="text-slate-400 text-sm italic">
+                        "They doubled our leads in just 30 days." <span class="text-white font-semibold not-italic">— Sarah K., CEO</span>
+                    </p>
+                </div>
+            </div>
+
+            <!-- Right Side: Large Profile Image -->
+            <div class="w-full lg:w-2/5 relative">
+                <div class="relative group">
+                    <!-- Decorative Background Glow -->
+                    <div class="absolute -inset-4 bg-gradient-to-tr from-emerald-500/20 to-cyan-500/20 rounded-[3rem] blur-2xl group-hover:blur-3xl transition-all duration-700"></div>
+                    
+                    <!-- Image Container -->
+                    <div class="relative overflow-hidden rounded-[2.5rem] border border-white/10 bg-slate-900 shadow-2xl">
+                        <img src="https://flyingtemplates.com/wp-content/uploads/2026/04/me-waring-suit-AI-e1777487485872.jpeg" alt="Osazee Kelvin King" class="w-full h-auto min-h-[500px] object-cover object-top grayscale hover:grayscale-0 transition-all duration-700 scale-105 hover:scale-100 lg:font-[''Inter',_sans-serif']">
+                        
+                        <!-- Floating Identity Card -->
+                        <div class="absolute bottom-6 left-6 right-6 p-6 bg-slate-950/80 backdrop-blur-xl rounded-2xl border border-white/10 shadow-2xl transform translate-y-2 group-hover:translate-y-0 transition-transform duration-500">
+                            <h3 class="text-white font-bold text-xl">Osazee Kelvin King</h3>
+                            <p class="text-emerald-400 font-medium">Sales Funnel Specialist</p>
+                            <div class="mt-3 flex gap-1">
+                                <div class="h-1 w-12 bg-emerald-500 rounded-full"></div>
+                                <div class="h-1 w-4 bg-emerald-500/30 rounded-full"></div>
+                                <div class="h-1 w-4 bg-emerald-500/30 rounded-full"></div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Floating Accent Elements -->
+                    <div class="absolute -top-6 -right-6 w-24 h-24 bg-emerald-500/10 backdrop-blur-3xl rounded-full border border-emerald-500/20 hidden xl:flex items-center justify-center animate-bounce">
+                        <svg class="w-8 h-8 text-emerald-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"></path></svg>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const counters = document.querySelectorAll('.counter-val');
+            const speed = 2000;
+
+            const animateCounter = (counter) => {
+                const target = +counter.getAttribute('data-target');
+                const isDecimal = counter.getAttribute('data-target').includes('.');
+                const startTime = performance.now();
+
+                const update = (currentTime) => {
+                    const elapsed = currentTime - startTime;
+                    const progress = Math.min(elapsed / speed, 1);
+                    
+                    const easeOutQuad = t => t * (2 - t);
+                    const currentVal = progress === 1 ? target : target * easeOutQuad(progress);
+
+                    if (isDecimal) {
+                        counter.innerText = currentVal.toFixed(1);
+                    } else {
+                        counter.innerText = Math.floor(currentVal);
+                    }
+
+                    if (progress < 1) {
+                        requestAnimationFrame(update);
+                    }
+                };
+
+                requestAnimationFrame(update);
+            };
+
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        const sectionCounters = entry.target.querySelectorAll('.counter-val');
+                        sectionCounters.forEach(animateCounter);
+                        observer.unobserve(entry.target);
+                    }
+                });
+            }, { threshold: 0.2 });
+
+            const statsGrid = document.getElementById('hero');
+            if (statsGrid) observer.observe(statsGrid);
+        });
+    </script>
+</section></div>
+
+<!-- About & Story Section -->
+<div id="about--story-section" class="scroll-mt-20"><section id="about" class="py-24 bg-slate-950 relative border-y border-emerald-500/10">
+    <div class="max-w-7xl mx-auto px-4 md:px-6">
+        <div class="grid md:grid-cols-2 gap-16 items-center">
+            
+            <!-- Left: Story -->
+            <div class="space-y-6">
+                <h2 class="text-emerald-500 font-bold tracking-widest text-sm uppercase">My Story & Philosophy</h2>
+                <h3 class="text-3xl md:text-4xl font-extrabold text-white">Stop Being the Best-Kept Secret and Get Paid What You’re Worth</h3>
+                <div class="text-slate-400 space-y-4 text-lg leading-relaxed">
+                    <p>
+                        Most business owners have a "ghost town" online presence that kills their sales before they even start. You spend months perfecting your craft, but without the right system, you remain invisible.
+                    </p>
+                    <p>
+                        I'm Osazee Kelvin King, and I help you build your profitable online business, simply and quickly. I've guided over <span class="text-emerald-400 font-semibold">750 business owners</span> to success, helping them reclaim their freedom.
+                    </p>
+                    <p>
+                        My philosophy is simple: Your website should be an engine, not a brochure. It should work for you, so you can stop working for it.
+                    </p>
+                </div>
+                <div class="pt-4">
+                    <a href="#contact" class="text-emerald-400 font-bold hover:text-emerald-300 flex items-center gap-2 group">
+                        Let's build your engine <span class="group-hover:translate-x-2 transition-transform">→</span>
+                    </a>
+                </div>
+            </div>
+
+            <!-- Right: Core Capabilities -->
+            <div class="bg-slate-900/50 rounded-2xl p-8 border border-emerald-500/20 relative overflow-hidden">
+                <div class="absolute top-0 right-0 p-4 opacity-10">
+                    <svg class="w-32 h-32 text-emerald-500" fill="currentColor" viewBox="0 0 24 24"><path d="M13 10V3L4 14h7v7l9-11h-7z"/></svg>
+                </div>
+                <h4 class="text-white font-bold text-xl mb-8">Why Work With Me?</h4>
+                <div class="space-y-6">
+                    <div class="flex gap-4">
+                        <div class="flex-shrink-0 w-12 h-12 bg-emerald-500/10 rounded-lg flex items-center justify-center text-emerald-400">
+                            <i class="fas fa-chart-line text-xl"></i>
+                        </div>
+                        <div>
+                            <h5 class="text-white font-bold">Conversion-First Design</h5>
+                            <p class="text-slate-400 text-sm">Every pixel is placed with the goal of turning a visitor into a customer.</p>
+                        </div>
+                    </div>
+                    <div class="flex gap-4">
+                        <div class="flex-shrink-0 w-12 h-12 bg-emerald-500/10 rounded-lg flex items-center justify-center text-emerald-400">
+                            <i class="fas fa-robot text-xl"></i>
+                        </div>
+                        <div>
+                            <h5 class="text-white font-bold">Simple Automation</h5>
+                            <p class="text-slate-400 text-sm">We set up tools that do the selling for you, even while you sleep.</p>
+                        </div>
+                    </div>
+                    <div class="flex gap-4">
+                        <div class="flex-shrink-0 w-12 h-12 bg-emerald-500/10 rounded-lg flex items-center justify-center text-emerald-400">
+                            <i class="fas fa-shield-alt text-xl"></i>
+                        </div>
+                        <div>
+                            <h5 class="text-white font-bold">Expert Guidance</h5>
+                            <p class="text-slate-400 text-sm">Avoid the expensive mistakes that sink 90% of online stores.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</section></div>
+
+<!-- Skills & Expertise -->
+<div id="skills--expertise" class="scroll-mt-20"><style>
+    @import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;800&display=swap');
+
+    @keyframes scroll {
+        0% { transform: translateX(0); }
+        100% { transform: translateX(-50%); }
+    }
+
+    .animate-infinite-scroll {
+        display: flex;
+        width: max-content;
+        animation: scroll 40s linear infinite;
+    }
+
+    .animate-infinite-scroll-slow {
+        display: flex;
+        width: max-content;
+        animation: scroll 50s linear infinite;
+    }
+
+    .pause-on-hover:hover {
+        animation-play-state: paused;
+    }
+</style>
+
+<section id="skills" class="py-24 bg-slate-950 overflow-hidden" style="font-family: 'Plus Jakarta Sans', sans-serif;">
+    <div class="max-w-7xl mx-auto px-4 md:px-6 mb-16">
+        <div class="text-center">
+            <h2 class="text-emerald-500 font-bold tracking-[0.2em] text-sm uppercase mb-4">Technical Stack</h2>
+            <h3 class="text-4xl md:text-6xl font-extrabold text-white tracking-tight">Elite Skillset & Expertise</h3>
+        </div>
+    </div>
+
+    <!-- First Row of Skills -->
+    <div class="flex mb-8 overflow-hidden [mask-image:_linear-gradient(to_right,transparent_0,_black_128px,_black_calc(100%-128px),transparent_100%)]">
+        <div class="animate-infinite-scroll pause-on-hover">
+            <!-- Set 1 -->
+            <div class="flex gap-4 px-2">
+                <div class="px-8 py-5 bg-slate-900/50 backdrop-blur-md border border-emerald-500/20 rounded-2xl flex items-center justify-center min-w-[250px] group hover:border-emerald-400 transition-all duration-300">
+                    <span class="text-white text-lg font-bold group-hover:text-emerald-400 transition-colors">Website Design</span>
+                </div>
+                <div class="px-8 py-5 bg-slate-900/50 backdrop-blur-md border border-emerald-500/20 rounded-2xl flex items-center justify-center min-w-[250px] group hover:border-emerald-400 transition-all duration-300">
+                    <span class="text-white text-lg font-bold group-hover:text-emerald-400 transition-colors">Copywriting</span>
+                </div>
+                <div class="px-8 py-5 bg-slate-900/50 backdrop-blur-md border border-emerald-500/20 rounded-2xl flex items-center justify-center min-w-[250px] group hover:border-emerald-400 transition-all duration-300">
+                    <span class="text-white text-lg font-bold group-hover:text-emerald-400 transition-colors">SEO</span>
+                </div>
+                <div class="px-8 py-5 bg-slate-900/50 backdrop-blur-md border border-emerald-500/20 rounded-2xl flex items-center justify-center min-w-[250px] group hover:border-emerald-400 transition-all duration-300">
+                    <span class="text-white text-lg font-bold group-hover:text-emerald-400 transition-colors">Graphics Design</span>
+                </div>
+            </div>
+            <!-- Set 2 (Duplicate for loop) -->
+            <div class="flex gap-4 px-2">
+                <div class="px-8 py-5 bg-slate-900/50 backdrop-blur-md border border-emerald-500/20 rounded-2xl flex items-center justify-center min-w-[250px] group hover:border-emerald-400 transition-all duration-300">
+                    <span class="text-white text-lg font-bold group-hover:text-emerald-400 transition-colors">Website Design</span>
+                </div>
+                <div class="px-8 py-5 bg-slate-900/50 backdrop-blur-md border border-emerald-500/20 rounded-2xl flex items-center justify-center min-w-[250px] group hover:border-emerald-400 transition-all duration-300">
+                    <span class="text-white text-lg font-bold group-hover:text-emerald-400 transition-colors">Copywriting</span>
+                </div>
+                <div class="px-8 py-5 bg-slate-900/50 backdrop-blur-md border border-emerald-500/20 rounded-2xl flex items-center justify-center min-w-[250px] group hover:border-emerald-400 transition-all duration-300">
+                    <span class="text-white text-lg font-bold group-hover:text-emerald-400 transition-colors">SEO</span>
+                </div>
+                <div class="px-8 py-5 bg-slate-900/50 backdrop-blur-md border border-emerald-500/20 rounded-2xl flex items-center justify-center min-w-[250px] group hover:border-emerald-400 transition-all duration-300">
+                    <span class="text-white text-lg font-bold group-hover:text-emerald-400 transition-colors">Graphics Design</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Second Row of Skills -->
+    <div class="flex overflow-hidden [mask-image:_linear-gradient(to_right,transparent_0,_black_128px,_black_calc(100%-128px),transparent_100%)]">
+        <div class="animate-infinite-scroll-slow pause-on-hover">
+            <!-- Set 1 -->
+            <div class="flex gap-4 px-2">
+                <div class="px-8 py-5 bg-slate-900/50 backdrop-blur-md border border-emerald-500/20 rounded-2xl flex items-center justify-center min-w-[250px] group hover:border-emerald-400 transition-all duration-300">
+                    <span class="text-white text-lg font-bold group-hover:text-emerald-400 transition-colors">Sales Funnel Design</span>
+                </div>
+                <div class="px-8 py-5 bg-slate-900/50 backdrop-blur-md border border-emerald-500/20 rounded-2xl flex items-center justify-center min-w-[250px] group hover:border-emerald-400 transition-all duration-300">
+                    <span class="text-white text-lg font-bold group-hover:text-emerald-400 transition-colors">Video Editing</span>
+                </div>
+                <div class="px-8 py-5 bg-slate-900/50 backdrop-blur-md border border-emerald-500/20 rounded-2xl flex items-center justify-center min-w-[250px] group hover:border-emerald-400 transition-all duration-300">
+                    <span class="text-white text-lg font-bold group-hover:text-emerald-400 transition-colors">Facebook Ads</span>
+                </div>
+                <div class="px-8 py-5 bg-slate-900/50 backdrop-blur-md border border-emerald-500/20 rounded-2xl flex items-center justify-center min-w-[250px] group hover:border-emerald-400 transition-all duration-300">
+                    <span class="text-white text-lg font-bold group-hover:text-emerald-400 transition-colors">High-Ticket Sales</span>
+                </div>
+            </div>
+            <!-- Set 2 (Duplicate for loop) -->
+            <div class="flex gap-4 px-2">
+                <div class="px-8 py-5 bg-slate-900/50 backdrop-blur-md border border-emerald-500/20 rounded-2xl flex items-center justify-center min-w-[250px] group hover:border-emerald-400 transition-all duration-300">
+                    <span class="text-white text-lg font-bold group-hover:text-emerald-400 transition-colors">Sales Funnel Design</span>
+                </div>
+                <div class="px-8 py-5 bg-slate-900/50 backdrop-blur-md border border-emerald-500/20 rounded-2xl flex items-center justify-center min-w-[250px] group hover:border-emerald-400 transition-all duration-300">
+                    <span class="text-white text-lg font-bold group-hover:text-emerald-400 transition-colors">Video Editing</span>
+                </div>
+                <div class="px-8 py-5 bg-slate-900/50 backdrop-blur-md border border-emerald-500/20 rounded-2xl flex items-center justify-center min-w-[250px] group hover:border-emerald-400 transition-all duration-300">
+                    <span class="text-white text-lg font-bold group-hover:text-emerald-400 transition-colors">Facebook Ads</span>
+                </div>
+                <div class="px-8 py-5 bg-slate-900/50 backdrop-blur-md border border-emerald-500/20 rounded-2xl flex items-center justify-center min-w-[250px] group hover:border-emerald-400 transition-all duration-300">
+                    <span class="text-white text-lg font-bold group-hover:text-emerald-400 transition-colors">High-Ticket Sales</span>
+                </div>
+            </div>
+        </div>
+    </div>
+</section></div>
+
+<!-- Flagship Projects Grid -->
+<div id="flagship-projects-grid" class="contents"><style>
+    @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;700;800&display=swap');
+</style>
+
+<section id="projects" class="py-24 bg-slate-950 border-t border-emerald-500/10 font-['Inter',_sans-serif]">
+    <div class="max-w-7xl mx-auto px-4 md:px-6">
+        <!-- Header -->
+        <div class="flex flex-col md:flex-row md:items-end justify-between mb-16 gap-6">
+            <div class="max-w-2xl">
+                <h2 class="text-emerald-500 font-bold tracking-widest text-sm uppercase mb-4">Case Studies</h2>
+                <h3 class="text-4xl md:text-6xl font-extrabold text-white leading-tight">Proven Results for Real Clients</h3>
+            </div>
+            <p class="text-slate-400 text-lg max-w-md leading-relaxed">
+                From "ghost towns" to high-converting machines, here is the proof that this simple framework works.
+            </p>
+        </div>
+
+        <!-- Project Grid -->
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+            
+            <!-- Project 1 -->
+            <div class="group relative bg-slate-900/50 backdrop-blur-sm rounded-3xl overflow-hidden border border-slate-800 hover:border-emerald-500/50 transition-all duration-300">
+                <div class="aspect-[4/3] overflow-hidden">
+                    <img src="https://zjmrfknhxmjasbglrebj.supabase.co/storage/v1/object/public/blog/cy9qms3wqmc-1778315809622.webp" alt="Creavert Website Redesign" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" id="fc-edit-nl3a9992a">
+                </div>
+                <div class="p-8">
+                    <span class="text-emerald-500 text-xs font-bold uppercase tracking-widest">Website Design</span>
+                    <h4 class="text-2xl font-bold text-white mt-3 mb-4">Creavert Website Redesign</h4>
+                    <p class="text-slate-400 mb-8 leading-relaxed">Creavert’s old site was confusing and cost them sales. We gave them a clean new look and a clear path to buy.</p>
+                    <label for="modal-1" class="inline-flex items-center justify-center w-full px-6 py-3 bg-slate-800 text-white font-bold rounded-xl hover:bg-emerald-600 cursor-pointer transition-all duration-300">
+                        View Case Study
+                    </label>
+                </div>
+            </div>
+
+            <!-- Project 2 -->
+            <div class="group relative bg-slate-900/50 backdrop-blur-sm rounded-3xl overflow-hidden border border-slate-800 hover:border-emerald-500/50 transition-all duration-300">
+                <div class="aspect-[4/3] overflow-hidden">
+                    <img src="https://sabidigital.com/wp-content/uploads/2025/09/sabimentors-homepage-tiny.webp" alt="Sabimentors Development" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" id="fc-edit-0kw9u86xd">
+                </div>
+                <div class="p-8">
+                    <span class="text-emerald-500 text-xs font-bold uppercase tracking-widest">E-Learning Development</span>
+                    <h4 class="text-2xl font-bold text-white mt-3 mb-4">Sabimentors Brand Identity</h4>
+                    <p class="text-slate-400 mb-8 leading-relaxed">Built a professional brand identity and a custom e-learning platform that turned expertise into a digital business.</p>
+                    <label for="modal-2" class="inline-flex items-center justify-center w-full px-6 py-3 bg-slate-800 text-white font-bold rounded-xl hover:bg-emerald-600 cursor-pointer transition-all duration-300">
+                        View Case Study
+                    </label>
+                </div>
+            </div>
+
+            <!-- Project 3 -->
+            <div class="group relative bg-slate-900/50 backdrop-blur-sm rounded-3xl overflow-hidden border border-slate-800 hover:border-emerald-500/50 transition-all duration-300">
+                <div class="aspect-[4/3] overflow-hidden">
+                    <img src="https://flyingtemplates.com/wp-content/uploads/2026/04/copywriting-ai-app.funnelcraftai.com_-scaled.webp" alt="High-Ticket Coaching Launch" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700">
+                </div>
+                <div class="p-8">
+                    <span class="text-emerald-500 text-xs font-bold uppercase tracking-widest">Sales Funnel</span>
+                    <h4 class="text-2xl font-bold text-white mt-3 mb-4">High-Ticket Coaching Launch</h4>
+                    <p class="text-slate-400 mb-8 leading-relaxed">45% increase in lead captures and $12,000 in new revenue generated in just 30 days of the launch.</p>
+                    <a href="#contact" class="inline-flex items-center justify-center w-full px-6 py-3 bg-emerald-600 text-white font-bold rounded-xl shadow-lg shadow-emerald-900/20 transition-all duration-300 lg:text-white lg:bg-[#1e293b] lg:font-[''Inter',_sans-serif'] lg:rounded-[12px] hover:bg-emerald-500 lg:pt-[12px] lg:pr-[24px] lg:pb-[12px] lg:pl-[24px]">
+                        Book Similar Project
+                    </a>
+                </div>
+            </div>
+
+        </div>
+
+        <!-- Call to Action -->
+        <div class="mt-20 text-center">
+            <a href="#contact" class="inline-block px-12 py-5 bg-emerald-600 hover:bg-emerald-500 text-white text-lg font-extrabold rounded-2xl shadow-2xl shadow-emerald-500/20 transform hover:-translate-y-1 transition-all duration-300">
+                Let's Collaborate
+            </a>
+            <p class="text-slate-500 mt-6 text-sm">Ready to be our next success story?</p>
+        </div>
+    </div>
+
+    <!-- Modals -->
+    <input type="checkbox" id="modal-1" class="hidden peer/modal1">
+    <div class="fixed inset-0 z-[200] hidden peer-checked/modal1:flex items-center justify-center p-4 bg-slate-950/95 backdrop-blur-md">
+        <div class="bg-slate-900 border border-emerald-500/20 rounded-3xl max-w-3xl w-full max-h-[90vh] overflow-y-auto p-6 md:p-10 relative shadow-2xl">
+            <label for="modal-1" class="absolute top-6 right-6 text-slate-400 hover:text-white cursor-pointer transition-colors">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
+                </svg>
+            </label>
+            <h4 class="text-3xl font-bold text-white mb-6">Creavert Website Redesign</h4>
+            <img src="https://zjmrfknhxmjasbglrebj.supabase.co/storage/v1/object/public/blog/cy9qms3wqmc-1778315809622.webp" class="w-full rounded-2xl mb-8 object-cover">
+            <div class="space-y-6">
+                <p class="text-slate-300 text-lg leading-relaxed">Creavert’s old site was confusing and cost them sales. We gave them a clean new look and a clear path to buy, which triggered a massive spike in new leads and customer inquiries.</p>
+                <div class="grid grid-cols-2 gap-4">
+                    <div class="bg-emerald-500/5 border border-emerald-500/10 p-6 rounded-2xl text-center">
+                        <p class="text-emerald-400 font-extrabold text-3xl">45%</p>
+                        <p class="text-xs text-slate-500 uppercase font-bold tracking-widest mt-1">Lead Increase</p>
+                    </div>
+                    <div class="bg-emerald-500/5 border border-emerald-500/10 p-6 rounded-2xl text-center">
+                        <p class="text-emerald-400 font-extrabold text-3xl">30%</p>
+                        <p class="text-xs text-slate-500 uppercase font-bold tracking-widest mt-1">Conversion Lift</p>
+                    </div>
+                </div>
+                <a href="https://sabidigital.com/" target="_blank" class="block w-full text-center py-4 bg-emerald-600 hover:bg-emerald-500 text-white font-bold rounded-xl transition-all">View Live Project</a>
+            </div>
+        </div>
+    </div>
+
+    <input type="checkbox" id="modal-2" class="hidden peer/modal2">
+    <div class="fixed inset-0 z-[200] hidden peer-checked/modal2:flex items-center justify-center p-4 bg-slate-950/95 backdrop-blur-md">
+        <div class="bg-slate-900 border border-emerald-500/20 rounded-3xl max-w-3xl w-full max-h-[90vh] overflow-y-auto p-6 md:p-10 relative shadow-2xl">
+            <label for="modal-2" class="absolute top-6 right-6 text-slate-400 hover:text-white cursor-pointer transition-colors">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
+                </svg>
+            </label>
+            <h4 class="text-3xl font-bold text-white mb-6">Sabimentors Brand Identity</h4>
+            <img src="https://sabidigital.com/wp-content/uploads/2025/09/sabimentors-homepage-tiny.webp" class="w-full rounded-2xl mb-8 object-cover">
+            <div class="space-y-6">
+                <p class="text-slate-300 text-lg leading-relaxed">Sabimentors needed a professional look and a way to sell courses online. We built their brand identity and a custom e-learning platform that turned their expertise into a thriving digital business.</p>
+                <div class="bg-emerald-500/5 border border-emerald-500/10 p-6 rounded-2xl text-center">
+                    <p class="text-emerald-400 font-extrabold text-3xl">100% Custom</p>
+                    <p class="text-xs text-slate-500 uppercase font-bold tracking-widest mt-1">LMS Development</p>
+                </div>
+                <a href="https://sabimentors.com/" target="_blank" class="block w-full text-center py-4 bg-emerald-600 hover:bg-emerald-500 text-white font-bold rounded-xl transition-all">View Live Project</a>
+            </div>
+        </div>
+    </div>
+</section></div>
+
+<!-- Our Services -->
+<div id="our-services" class="scroll-mt-20"><section id="services" class="py-24 bg-slate-950 grid-bg relative">
+    <div class="max-w-7xl mx-auto px-4 md:px-6">
+        <div class="text-center mb-16">
+            <h2 class="text-emerald-500 font-bold tracking-widest text-sm uppercase mb-4">How I Help You Grow</h2>
+            <h3 class="text-3xl md:text-5xl font-extrabold text-white">Expert Services & Capabilities</h3>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+            
+            <div class="p-8 bg-slate-900/80 border border-slate-800 rounded-2xl hover:border-emerald-500/50 transition-all group">
+                <div class="w-12 h-12 bg-emerald-500/10 rounded-lg flex items-center justify-center text-emerald-400 mb-6 group-hover:scale-110 transition-transform">
+                    <i class="fas fa-desktop text-xl"></i>
+                </div>
+                <h4 class="text-xl font-bold text-white mb-4">Professional Website Design</h4>
+                <p class="text-slate-400 text-sm leading-relaxed mb-6">Custom, mobile-ready websites that turn casual visitors into paying customers and build instant trust.</p>
+                <p class="text-emerald-400 font-bold">From $500</p>
+            </div>
+
+            <div class="p-8 bg-slate-900/80 border border-slate-800 rounded-2xl hover:border-emerald-500/50 transition-all group">
+                <div class="w-12 h-12 bg-emerald-500/10 rounded-lg flex items-center justify-center text-emerald-400 mb-6 group-hover:scale-110 transition-transform">
+                    <i class="fas fa-bullseye text-xl"></i>
+                </div>
+                <h4 class="text-xl font-bold text-white mb-4">Landing Page Design</h4>
+                <p class="text-slate-400 text-sm leading-relaxed mb-6">Custom landing pages built for speed and focused on a single call to action to maximize ROI.</p>
+                <p class="text-emerald-400 font-bold">From $500</p>
+            </div>
+
+            <div class="p-8 bg-slate-900/80 border border-slate-800 rounded-2xl hover:border-emerald-500/50 transition-all group">
+                <div class="w-12 h-12 bg-emerald-500/10 rounded-lg flex items-center justify-center text-emerald-400 mb-6 group-hover:scale-110 transition-transform">
+                    <i class="fas fa-filter text-xl"></i>
+                </div>
+                <h4 class="text-xl font-bold text-white mb-4">Sales Funnel Design</h4>
+                <p class="text-slate-400 text-sm leading-relaxed mb-6">Automated email sequences and seamless checkouts that turn leads into buyers on autopilot.</p>
+                <p class="text-emerald-400 font-bold">From $500</p>
+            </div>
+
+            <div class="p-8 bg-slate-900/80 border border-slate-800 rounded-2xl hover:border-emerald-500/50 transition-all group">
+                <div class="w-12 h-12 bg-emerald-500/10 rounded-lg flex items-center justify-center text-emerald-400 mb-6 group-hover:scale-110 transition-transform">
+                    <i class="fas fa-search text-xl"></i>
+                </div>
+                <h4 class="text-xl font-bold text-white mb-4">Search Engine Optimization</h4>
+                <p class="text-slate-400 text-sm leading-relaxed mb-6">Rank higher in search results and bring a steady stream of free, high-quality traffic to your site.</p>
+                <p class="text-emerald-400 font-bold">From $500</p>
+            </div>
+
+        </div>
+    </div>
+</section></div>
+
+<!-- Pricing & Packages -->
+<div id="pricing--packages" class="scroll-mt-20"><section id="pricing" class="py-24 bg-slate-950 border-y border-emerald-500/10">
+    <div class="max-w-7xl mx-auto px-4 md:px-6">
+        <div class="text-center mb-16">
+            <h2 class="text-emerald-500 font-bold tracking-widest text-sm uppercase mb-4">Transparent Pricing</h2>
+            <h3 class="text-3xl md:text-5xl font-extrabold text-white">Tailored Packages for Growth</h3>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+            
+            <!-- Tier 1 -->
+            <div class="bg-slate-900/50 border border-slate-800 rounded-2xl p-8 flex flex-col hover:border-emerald-500/30 transition-all">
+                <h4 class="text-white font-bold text-xl mb-2">Landing Page Design</h4>
+                <p class="text-slate-500 text-sm mb-6">Perfect for turning visitors into customers fast.</p>
+                <div class="text-4xl font-extrabold text-white mb-8">$500</div>
+                <ul class="space-y-4 mb-8 flex-grow">
+                    <li class="flex items-start gap-3 text-slate-300 text-sm">
+                        <i class="fas fa-check text-emerald-500 mt-1"></i>
+                        Custom Conversion Page
+                    </li>
+                    <li class="flex items-start gap-3 text-slate-300 text-sm">
+                        <i class="fas fa-check text-emerald-500 mt-1"></i>
+                        Mobile Responsive Design
+                    </li>
+                    <li class="flex items-start gap-3 text-slate-300 text-sm">
+                        <i class="fas fa-check text-emerald-500 mt-1"></i>
+                        Speed Optimization
+                    </li>
+                </ul>
+                <a href="#contact" class="w-full py-3 border border-emerald-500/50 text-emerald-400 font-bold rounded-xl text-center hover:bg-emerald-500/10 transition-all">Select Tier</a>
+            </div>
+
+            <!-- Tier 2 (Popular) -->
+            <div class="bg-slate-900 border-2 border-emerald-500 rounded-2xl p-8 flex flex-col relative transform md:-translate-y-4 shadow-[0_0_30px_rgba(16,185,129,0.2)]">
+                <div class="absolute top-0 left-1/2 -translate-x-1/2 -translate-y-1/2 bg-emerald-500 text-slate-950 text-xs font-bold px-4 py-1 rounded-full uppercase tracking-widest">Most Popular</div>
+                <h4 class="text-white font-bold text-xl mb-2">Professional Website</h4>
+                <p class="text-slate-500 text-sm mb-6">For businesses ready to look credible online.</p>
+                <div class="text-4xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-emerald-400 to-cyan-400 mb-8">$1,500</div>
+                <ul class="space-y-4 mb-8 flex-grow">
+                    <li class="flex items-start gap-3 text-slate-300 text-sm">
+                        <i class="fas fa-check text-emerald-500 mt-1"></i>
+                        Full 5-Page Website
+                    </li>
+                    <li class="flex items-start gap-3 text-slate-300 text-sm">
+                        <i class="fas fa-check text-emerald-500 mt-1"></i>
+                        Lead Capture Integration
+                    </li>
+                    <li class="flex items-start gap-3 text-slate-300 text-sm">
+                        <i class="fas fa-check text-emerald-500 mt-1"></i>
+                        Advanced Trust-Building Design
+                    </li>
+                    <li class="flex items-start gap-3 text-slate-300 text-sm">
+                        <i class="fas fa-check text-emerald-500 mt-1"></i>
+                        Basic SEO Setup
+                    </li>
+                </ul>
+                <a href="#contact" class="w-full py-3 bg-emerald-600 text-white font-bold rounded-xl text-center hover:bg-emerald-500 transition-all shadow-[0_0_15px_rgba(16,185,129,0.4)]">Book Call</a>
+            </div>
+
+            <!-- Tier 3 -->
+            <div class="bg-slate-900/50 border border-slate-800 rounded-2xl p-8 flex flex-col hover:border-emerald-500/30 transition-all">
+                <h4 class="text-white font-bold text-xl mb-2">Search Engine Optimization</h4>
+                <p class="text-slate-500 text-sm mb-6">Get customers without paying for ads.</p>
+                <div class="text-4xl font-extrabold text-white mb-8">$500</div>
+                <ul class="space-y-4 mb-8 flex-grow">
+                    <li class="flex items-start gap-3 text-slate-300 text-sm">
+                        <i class="fas fa-check text-emerald-500 mt-1"></i>
+                        Keyword Research
+                    </li>
+                    <li class="flex items-start gap-3 text-slate-300 text-sm">
+                        <i class="fas fa-check text-emerald-500 mt-1"></i>
+                        On-Page Optimization
+                    </li>
+                    <li class="flex items-start gap-3 text-slate-300 text-sm">
+                        <i class="fas fa-check text-emerald-500 mt-1"></i>
+                        Technical SEO Audit
+                    </li>
+                </ul>
+                <a href="#contact" class="w-full py-3 border border-emerald-500/50 text-emerald-400 font-bold rounded-xl text-center hover:bg-emerald-500/10 transition-all">Select Tier</a>
+            </div>
+
+        </div>
+    </div>
+</section></div>
+
+<!-- Client Testimonials -->
+<div id="client-testimonials" class="scroll-mt-20"><section id="reviews" class="py-24 bg-slate-950 grid-bg">
+    <div class="max-w-7xl mx-auto px-4 md:px-6">
+        <div class="text-center mb-16">
+            <h2 class="text-emerald-500 font-bold tracking-widest text-sm uppercase mb-4">Proof & Endorsements</h2>
+            <h3 class="text-3xl md:text-5xl font-extrabold text-white">What My Clients Say</h3>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+            
+            <div class="bg-slate-900 p-8 rounded-2xl border border-slate-800 relative">
+                <div class="absolute -top-4 -left-4 text-emerald-500/20 text-6xl font-serif">“</div>
+                <p class="text-slate-300 text-lg italic mb-8 relative z-10">
+                    "I was hesitant to work with SabiDigital because I had been let down by others in the past. Within thirty days, he helped me hit a 4x return on my ad spend. My business finally feels stable and we just had our first $20,000 month."
+                </p>
+                <div class="flex items-center gap-4">
+                    <img src="https://zjmrfknhxmjasbglrebj.supabase.co/storage/v1/object/public/brand/cnzo9404rx-1778120229368.webp" alt="Osaro Destiny" class="w-12 h-12 rounded-full object-cover">
+                    <div>
+                        <h4 class="text-white font-bold">Osaro Destiny</h4>
+                        <p class="text-slate-500 text-xs uppercase tracking-widest">CEO, Ekiema Wellness</p>
+                    </div>
+                    <div class="ml-auto flex text-emerald-400 text-xs">
+                        <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+                    </div>
+                </div>
+            </div>
+
+            <div class="bg-slate-900 p-8 rounded-2xl border border-slate-800 relative">
+                <div class="absolute -top-4 -left-4 text-emerald-500/20 text-6xl font-serif">“</div>
+                <p class="text-slate-300 text-lg italic mb-8 relative z-10">
+                    "I honestly doubted if Kelvin's strategy would work for us, but the numbers don't lie. We saw a 30% increase in our conversion rate and an extra $15,000 in sales in just two months. He truly transformed our marketing efforts."
+                </p>
+                <div class="flex items-center gap-4">
+                    <img src="https://zjmrfknhxmjasbglrebj.supabase.co/storage/v1/object/public/brand/cnzo9404rx-1778120229368.webp" alt="Jonathan" class="w-12 h-12 rounded-full object-cover">
+                    <div>
+                        <h4 class="text-white font-bold">Jonathan</h4>
+                        <p class="text-slate-500 text-xs uppercase tracking-widest">CEO, Goldchek Herbals</p>
+                    </div>
+                    <div class="ml-auto flex text-emerald-400 text-xs">
+                        <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</section></div>
+
+<!-- Interactive Contact & Lead Capture -->
+<div id="interactive-contact--lead-capture" class="scroll-mt-20"><section id="contact" class="py-24 bg-slate-950 border-t border-emerald-500/10">
+    <div class="max-w-7xl mx-auto px-4 md:px-6">
+        <div class="grid md:grid-cols-2 gap-16 items-center">
+            
+            <!-- Left: Message -->
+            <div>
+                <h2 class="text-emerald-500 font-bold tracking-widest text-sm uppercase mb-4">Get In Touch</h2>
+                <h3 class="text-4xl md:text-5xl font-extrabold text-white mb-6">Let's Scale Your Business</h3>
+                <p class="text-slate-400 text-lg mb-8">
+                    Stop leaving your success to chance. Reach out today and let's build the engine that finally makes your business click.
+                </p>
+                
+                <div class="space-y-6 mb-8">
+                    <div class="flex items-center gap-4">
+                        <div class="w-10 h-10 bg-emerald-500/10 rounded-full flex items-center justify-center text-emerald-400">
+                            <i class="fas fa-envelope"></i>
+                        </div>
+                        <span class="text-slate-300">contact@sabidigital.com</span>
+                    </div>
+                    <div class="flex items-center gap-4">
+                        <div class="w-10 h-10 bg-emerald-500/10 rounded-full flex items-center justify-center text-emerald-400">
+                            <i class="fas fa-clock"></i>
+                        </div>
+                        <span class="text-slate-300">Response in 24 hours</span>
+                    </div>
+                </div>
+
+                <div class="flex gap-4">
+                    <a href="https://facebook.com/osazeekelvinking" class="text-slate-500 hover:text-emerald-400 transition-colors text-2xl"><i class="fab fa-facebook"></i></a>
+                    <a href="https://twitter.com/okelvinking" class="text-slate-500 hover:text-emerald-400 transition-colors text-2xl"><i class="fab fa-twitter"></i></a>
+                    <a href="https://instagram.com/osazeekelvinking" class="text-slate-500 hover:text-emerald-400 transition-colors text-2xl"><i class="fab fa-instagram"></i></a>
+                    <a href="https://www.linkedin.com/in/kelvinkingofficial/" class="text-slate-500 hover:text-emerald-400 transition-colors text-2xl"><i class="fab fa-linkedin"></i></a>
+                </div>
+            </div>
+
+            <!-- Right: Form -->
+            <div class="bg-slate-900 p-8 rounded-2xl border border-emerald-500/20 shadow-[0_0_50px_rgba(16,185,129,0.1)]">
+                <form action="#" method="POST" class="space-y-4">
+                    <div>
+                        <label class="block text-slate-400 text-xs font-bold uppercase mb-2">Full Name</label>
+                        <input type="text" placeholder="John Doe" class="w-full bg-slate-950 border border-slate-800 rounded-xl px-4 py-3 text-white focus:outline-none focus:border-emerald-500 transition-all">
+                    </div>
+                    <div>
+                        <label class="block text-slate-400 text-xs font-bold uppercase mb-2">Email Address</label>
+                        <input type="email" placeholder="john@example.com" class="w-full bg-slate-950 border border-slate-800 rounded-xl px-4 py-3 text-white focus:outline-none focus:border-emerald-500 transition-all">
+                    </div>
+                    <div>
+                        <label class="block text-slate-400 text-xs font-bold uppercase mb-2">Project Type</label>
+                        <select class="w-full bg-slate-950 border border-slate-800 rounded-xl px-4 py-3 text-white focus:outline-none focus:border-emerald-500 transition-all">
+                            <option>Sales Funnel</option>
+                            <option>Website Redesign</option>
+                            <option>SEO Strategy</option>
+                            <option>Copywriting</option>
+                        </select>
+                    </div>
+                    <div>
+                        <label class="block text-slate-400 text-xs font-bold uppercase mb-2">Message</label>
+                        <textarea rows="4" placeholder="Tell me about your business goals..." class="w-full bg-slate-950 border border-slate-800 rounded-xl px-4 py-3 text-white focus:outline-none focus:border-emerald-500 transition-all"></textarea>
+                    </div>
+                    <button type="submit" class="w-full py-4 bg-emerald-600 hover:bg-emerald-500 text-white font-bold rounded-xl transition-all shadow-[0_0_15px_rgba(16,185,129,0.4)]">
+                        Send Message →
+                    </button>
+                </form>
+            </div>
+
+        </div>
+    </div>
+</section>
+
+<footer class="py-12 bg-slate-950 border-t border-slate-900 text-center">
+    <div class="max-w-7xl mx-auto px-4">
+        <img src="https://jufjpzuzfftxyckfovmf.supabase.co/storage/v1/object/public/academy-attachments/Brand%20Elements/funnelcraftai%20logo%20dark.svg" alt="FunnelCraft AI" class="h-8 mx-auto mb-6 opacity-50 grayscale">
+        <p class="text-slate-500 text-sm">&copy; 2026 Osazee Kelvin King. All rights reserved. Built for Conversion.</p>
+    </div>
+</footer></div>
+
+</body>
+</html>
