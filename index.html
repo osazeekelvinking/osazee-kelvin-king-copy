@@ -28,18 +28,8 @@
 <style>
     @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;700;800&display=swap');
     body { font-family: 'Montserrat', sans-serif; }
-    
-    /* Reveal Animation Styles */
-    .reveal {
-        opacity: 0;
-        transform: translateY(40px);
-        transition: opacity 0.8s cubic-bezier(0.4, 0, 0.2, 1), transform 0.8s cubic-bezier(0.4, 0, 0.2, 1);
-        will-change: opacity, transform;
-    }
-    .reveal.active {
-        opacity: 1;
-        transform: translateY(0);
-    }
+    .neon-border { box-shadow: 0 0 10px rgba(16, 185, 129, 0.3), inset 0 0 5px rgba(16, 185, 129, 0.2); }
+    .grid-bg { background-image: radial-gradient(rgba(16, 185, 129, 0.1) 1px, transparent 1px); background-size: 30px 30px; }
 </style>
 
 <nav class="sticky top-0 z-[100] bg-slate-950/80 backdrop-blur-xl border-b border-emerald-500/20">
@@ -48,7 +38,7 @@
             <!-- Logo -->
             <div class="flex-shrink-0 flex items-center">
                 <a href="#hero" class="flex items-center gap-2">
-                    <img src="https://jufjpzuzfftxyckfovmf.supabase.co/storage/v1/object/public/academy-attachments/Brand%20Elements/funnelcraftai%20logo%20white.svg" alt="Osazee Kelvin King" class="w-[130px]">
+                    <img src="https://jufjpzuzfftxyckfovmf.supabase.co/storage/v1/object/public/academy-attachments/Brand%20Elements/funnelcraftai%20logo%20white.svg" alt="FunnelCraft AI Logo" class="lg:font-[''Inter',_sans-serif'] lg:w-[130px] font-[''Inter',_sans-serif'] w-[130px]">
                 </a>
             </div>
 
@@ -91,7 +81,29 @@
 </nav></div>
 
 <!-- Hero Section -->
-<div id="hero-section" class="scroll-mt-20"><section id="hero" class="reveal relative min-h-screen flex items-center justify-center overflow-hidden bg-slate-950 pt-20 pb-12 md:pt-32 md:pb-24 font-['Montserrat']">
+<div id="hero-section" class="scroll-mt-20"><style>
+    @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;700;800&display=swap');
+
+    @keyframes textGlow {
+        0%, 100% { filter: drop-shadow(0 0 10px rgba(52, 211, 153, 0.4)); }
+        50% { filter: drop-shadow(0 0 25px rgba(52, 211, 153, 0.8)); }
+    }
+
+    @keyframes smoothFloat {
+        0%, 100% { transform: translateY(0px); }
+        50% { transform: translateY(-25px); }
+    }
+
+    .animate-glow {
+        animation: textGlow 3s ease-in-out infinite;
+    }
+
+    .animate-float-image {
+        animation: smoothFloat 6s ease-in-out infinite;
+    }
+</style>
+
+<section id="hero" class="relative min-h-screen flex items-center justify-center overflow-hidden bg-slate-950 pt-20 pb-12 md:pt-32 md:pb-24 font-['Inter']">
     <!-- Background Effects -->
     <div class="absolute top-0 left-0 w-full h-full pointer-events-none">
         <div class="absolute top-[-10%] left-[-10%] w-[70%] h-[70%] bg-emerald-600/10 blur-[120px] rounded-full"></div>
@@ -110,68 +122,155 @@
                         <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span>
                         <span class="relative inline-flex rounded-full h-2 w-2 bg-emerald-500"></span>
                     </span>
-                    ⚡ Trusted by 750+ Brands • 98% Client Retention
+                    750+ Brands Trusted Us • 98% Retention
                 </div>
 
                 <!-- Main Message -->
                 <h1 class="text-4xl md:text-6xl font-extrabold text-white leading-[1.1] tracking-tight">
-                    We Turn Brands Into <span class="text-transparent bg-clip-text bg-gradient-to-r from-emerald-400 to-cyan-400">Market Leaders.</span> Guaranteed.
+                    We Turn Brands Into <span class="animate-glow inline-block text-transparent bg-clip-text bg-gradient-to-r from-emerald-400 to-cyan-400">Market Leaders.</span> Guaranteed.
                 </h1>
 
                 <p class="text-lg md:text-xl text-slate-400 max-w-2xl mx-auto lg:mx-0 leading-relaxed">
                     Stop being the best-kept secret. We build high-speed sales systems and strategies that turn strangers into loyal customers without the stress.
                 </p>
 
-                <!-- Mini Social Proof Row -->
-                <div class="flex flex-wrap justify-center lg:justify-start gap-4">
-                    <div class="flex items-center gap-2 bg-slate-900/50 border border-emerald-500/20 px-3 py-1.5 rounded-full">
-                        <span class="text-emerald-400 text-sm">✅</span>
-                        <span class="text-white text-xs font-bold">750+ Projects</span>
+                <!-- Stats Grid -->
+                <div class="grid grid-cols-2 gap-3 md:gap-4">
+                    <div class="flex flex-col items-center lg:items-start p-5 bg-slate-900/40 rounded-2xl border border-white/5 backdrop-blur-md">
+                        <div class="flex items-baseline gap-1">
+                            <span class="text-3xl md:text-4xl font-extrabold text-emerald-500 counter" data-target="750">0</span>
+                            <span class="text-emerald-500 font-bold text-xl">+</span>
+                        </div>
+                        <span class="text-slate-500 text-[10px] md:text-xs uppercase font-bold tracking-[0.2em] mt-1">Stores Built</span>
                     </div>
-                    <div class="flex items-center gap-2 bg-slate-900/50 border border-emerald-500/20 px-3 py-1.5 rounded-full">
-                        <span class="text-emerald-400 text-sm">⭐</span>
-                        <span class="text-white text-xs font-bold">4.9/5 Rating</span>
+                    <div class="flex flex-col items-center lg:items-start p-5 bg-slate-900/40 rounded-2xl border border-white/5 backdrop-blur-md">
+                        <div class="flex items-baseline gap-1">
+                            <span class="text-3xl md:text-4xl font-extrabold text-emerald-500 counter" data-target="4.9" data-decimal="true">0</span>
+                            <span class="text-emerald-500 font-bold text-xl">/5</span>
+                        </div>
+                        <span class="text-slate-500 text-[10px] md:text-xs uppercase font-bold tracking-[0.2em] mt-1">Client Rating</span>
                     </div>
-                    <div class="flex items-center gap-2 bg-slate-900/50 border border-emerald-500/20 px-3 py-1.5 rounded-full">
-                        <span class="text-emerald-400 text-sm">💰</span>
-                        <span class="text-white text-xs font-bold">$2M+ Revenue</span>
+                    <div class="flex flex-col items-center lg:items-start p-5 bg-slate-900/40 rounded-2xl border border-white/5 backdrop-blur-md">
+                        <div class="flex items-baseline gap-1">
+                            <span class="text-emerald-500 font-bold text-xl">$</span>
+                            <span class="text-3xl md:text-4xl font-extrabold text-emerald-500 counter" data-target="2">0</span>
+                            <span class="text-emerald-500 font-bold text-xl">M+</span>
+                        </div>
+                        <span class="text-slate-500 text-[10px] md:text-xs uppercase font-bold tracking-[0.2em] mt-1">Generated</span>
+                    </div>
+                    <div class="flex flex-col items-center lg:items-start p-5 bg-slate-900/40 rounded-2xl border border-white/5 backdrop-blur-md">
+                        <div class="flex items-baseline gap-1">
+                            <span class="text-3xl md:text-4xl font-extrabold text-emerald-500 counter" data-target="98">0</span>
+                            <span class="text-emerald-500 font-bold text-xl">%</span>
+                        </div>
+                        <span class="text-slate-500 text-[10px] md:text-xs uppercase font-bold tracking-[0.2em] mt-1">Retention</span>
                     </div>
                 </div>
 
                 <!-- Action Buttons -->
                 <div class="flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-4">
                     <a href="#projects" class="w-full sm:w-auto px-10 py-5 bg-emerald-600 hover:bg-emerald-500 text-white font-bold rounded-2xl transition-all hover:scale-105 shadow-lg shadow-emerald-900/40 text-center">
-                        See My Work →
+                        See My Work
                     </a>
                     <a href="#contact" class="w-full sm:w-auto px-10 py-5 bg-slate-900 border border-slate-700 text-white font-bold rounded-2xl hover:bg-slate-800 transition-all text-center">
-                        Book a Free Strategy Call
+                        Free Strategy Call
                     </a>
                 </div>
 
-                <!-- Profile Identity Strip -->
-                <div class="flex items-center justify-center lg:justify-start gap-3 pt-6 border-t border-white/5">
-                    <img src="https://flyingtemplates.com/wp-content/uploads/2026/04/me-waring-suit-AI-e1777487485872.jpeg" alt="Osazee Kelvin King" class="w-12 h-12 rounded-full border-2 border-emerald-500 object-cover">
-                    <div class="text-left">
-                        <p class="text-white font-bold text-sm">Osazee Kelvin King</p>
-                        <p class="text-slate-500 text-xs">Architect & Conversion Specialist</p>
+                <!-- Testimonial Peek -->
+                <div class="flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-4 pt-4 border-t border-white/5">
+                    <div class="flex -space-x-3">
+                        <img src="https://placehold.co/100x100/10b981/ffffff?text=1" alt="Client" class="w-10 h-10 rounded-full border-2 border-slate-950">
+                        <img src="https://placehold.co/100x100/3b82f6/ffffff?text=2" alt="Client" class="w-10 h-10 rounded-full border-2 border-slate-950">
+                        <img src="https://placehold.co/100x100/8b5cf6/ffffff?text=3" alt="Client" class="w-10 h-10 rounded-full border-2 border-slate-950">
                     </div>
+                    <p class="text-slate-400 text-sm italic text-center lg:text-left">
+                        "They doubled our leads in just 30 days." <span class="text-white font-semibold">Sarah K., CEO</span>
+                    </p>
                 </div>
             </div>
 
             <!-- Right Side: Visual -->
             <div class="w-full lg:w-1/2 relative">
                 <div class="absolute -inset-1 bg-gradient-to-r from-emerald-500 to-cyan-500 rounded-3xl blur opacity-20"></div>
-                <div class="relative bg-slate-900 rounded-3xl border border-white/10 overflow-hidden shadow-2xl h-[450px] md:h-[550px]">
-                    <img src="https://flyingtemplates.com/wp-content/uploads/2026/04/me-waring-suit-AI-e1777487485872.jpeg" alt="Osazee Kelvin King" class="w-full h-full object-cover grayscale hover:grayscale-0 transition-all duration-1000">
+                <div class="relative bg-slate-900 rounded-3xl border border-white/10 overflow-hidden shadow-2xl h-[500px] md:h-[600px]">
+                    <!-- Image with Float Animation -->
+                    <img src="https://flyingtemplates.com/wp-content/uploads/2026/04/me-waring-suit-AI-e1777487485872.jpeg" alt="Osazee Kelvin King" class="animate-float-image w-full h-[120%] object-cover grayscale hover:grayscale-0 transition-all duration-1000 absolute top-0 left-0">
+                    
+                    <!-- Floating Info Box -->
+                    <div class="absolute bottom-4 left-4 right-4 p-5 bg-slate-950/90 backdrop-blur-xl border border-white/10 rounded-2xl z-20">
+                        <div class="flex items-center justify-between">
+                            <div>
+                                <p class="text-white font-bold text-lg">Osazee Kelvin King</p>
+                                <p class="text-emerald-400 text-sm font-medium">Sales Funnel Specialist</p>
+                            </div>
+                            <div class="hidden sm:flex gap-1.5">
+                                <div class="w-2 h-2 rounded-full bg-emerald-500"></div>
+                                <div class="w-2 h-2 rounded-full bg-emerald-500/50"></div>
+                                <div class="w-2 h-2 rounded-full bg-emerald-500/20"></div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
             
         </div>
     </div>
-</section></div>
+</section>
+
+<script>
+    (function() {
+        const counters = document.querySelectorAll('.counter');
+        const duration = 2000;
+
+        const animateCounter = (counter) => {
+            const target = parseFloat(counter.getAttribute('data-target'));
+            const isDecimal = counter.getAttribute('data-decimal') === 'true';
+            const startTime = performance.now();
+
+            const updateCount = (currentTime) => {
+                const elapsed = currentTime - startTime;
+                const progress = Math.min(elapsed / duration, 1);
+                
+                const easeProgress = 1 - Math.pow(1 - progress, 3);
+                const currentVal = easeProgress * target;
+
+                if (isDecimal) {
+                    counter.innerText = currentVal.toFixed(1);
+                } else {
+                    counter.innerText = Math.floor(currentVal);
+                }
+
+                if (progress < 1) {
+                    requestAnimationFrame(updateCount);
+                } else {
+                    counter.innerText = isDecimal ? target.toFixed(1) : target;
+                }
+            };
+            
+            requestAnimationFrame(updateCount);
+        };
+
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    animateCounter(entry.target);
+                    observer.unobserve(entry.target);
+                }
+            });
+        }, observerOptions);
+
+        counters.forEach(counter => observer.observe(counter));
+    })();
+</script></div>
 
 <!-- About & Story Section -->
-<div id="about--story-section" class="scroll-mt-20"><section id="about" class="reveal py-24 bg-slate-950 relative border-y border-emerald-500/10">
+<div id="about--story-section" class="scroll-mt-20"><section id="about" class="py-24 bg-slate-950 relative border-y border-emerald-500/10">
     <div class="max-w-7xl mx-auto px-4 md:px-6">
         <div class="grid md:grid-cols-2 gap-16 items-center">
             
@@ -240,175 +339,213 @@
 
 <!-- Skills & Expertise -->
 <div id="skills--expertise" class="scroll-mt-20"><style>
-    @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700;800&display=swap');
+    @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;700;800&display=swap');
 
-    @keyframes scroll {
+    @keyframes scroll-left {
         0% { transform: translateX(0); }
         100% { transform: translateX(-50%); }
     }
 
-    @keyframes scroll-reverse {
+    @keyframes scroll-right {
         0% { transform: translateX(-50%); }
         100% { transform: translateX(0); }
     }
 
-    .animate-scroll {
-        display: flex;
-        width: max-content;
-        animation: scroll 40s linear infinite;
+    .animate-scroll-left {
+        animation: scroll-left 30s linear infinite;
     }
 
-    .animate-scroll-reverse {
-        display: flex;
-        width: max-content;
-        animation: scroll-reverse 40s linear infinite;
+    .animate-scroll-right {
+        animation: scroll-right 30s linear infinite;
     }
 
-    .pause-on-hover:hover .animate-scroll,
-    .pause-on-hover:hover .animate-scroll-reverse {
+    .pause-on-hover:hover .animate-scroll-left,
+    .pause-on-hover:hover .animate-scroll-right {
         animation-play-state: paused;
     }
 </style>
 
-<section id="skills" class="py-24 bg-slate-950 relative overflow-hidden font-['Montserrat']">
-    <!-- Background Glow -->
-    <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full h-full bg-emerald-500/5 blur-[120px] rounded-full pointer-events-none"></div>
+<section id="skills" class="py-24 bg-slate-950 relative overflow-hidden font-['Inter']">
+    <!-- Background Decoration -->
+    <div class="absolute top-0 left-1/2 -translate-x-1/2 w-full h-full opacity-10 pointer-events-none">
+        <div class="absolute top-0 left-1/2 -translate-x-1/2 w-[1000px] h-[600px] bg-emerald-500/20 blur-[120px] rounded-full"></div>
+    </div>
 
-    <div class="max-w-7xl mx-auto px-4 md:px-6 relative z-10">
-        <div class="text-center mb-16">
+    <div class="relative z-10">
+        <div class="max-w-7xl mx-auto px-4 md:px-6 mb-16 text-center">
             <h2 class="text-emerald-500 font-bold tracking-widest text-sm uppercase mb-4">Technical Stack</h2>
             <h3 class="text-3xl md:text-5xl font-extrabold text-white">Elite Skillset & Expertise</h3>
         </div>
-    </div>
 
-    <!-- Scrolling Rows Container -->
-    <div class="flex flex-col gap-6 pause-on-hover">
-        
-        <!-- Row 1: Left to Right -->
-        <div class="flex overflow-hidden">
-            <div class="animate-scroll flex gap-4 px-2">
-                <!-- Original Items -->
-                <div class="px-8 py-5 bg-slate-900/50 backdrop-blur-md border border-emerald-500/20 rounded-2xl hover:border-emerald-400 transition-colors duration-300 flex-shrink-0">
-                    <span class="text-white font-bold text-lg">Website Design</span>
+        <div class="space-y-8 pause-on-hover">
+            <!-- Row 1: Moving Left -->
+            <div class="flex overflow-hidden select-none">
+                <div class="flex flex-nowrap gap-6 animate-scroll-left">
+                    <!-- Original Set -->
+                    <div class="flex-shrink-0 px-8 py-5 bg-slate-900/50 backdrop-blur-md border border-emerald-500/20 rounded-2xl hover:border-emerald-400 transition-colors duration-300">
+                        <span class="text-white font-bold text-lg md:text-xl">Website Design</span>
+                    </div>
+                    <div class="flex-shrink-0 px-8 py-5 bg-slate-900/50 backdrop-blur-md border border-emerald-500/20 rounded-2xl hover:border-emerald-400 transition-colors duration-300">
+                        <span class="text-white font-bold text-lg md:text-xl">Copywriting</span>
+                    </div>
+                    <div class="flex-shrink-0 px-8 py-5 bg-slate-900/50 backdrop-blur-md border border-emerald-500/20 rounded-2xl hover:border-emerald-400 transition-colors duration-300">
+                        <span class="text-white font-bold text-lg md:text-xl">SEO Optimization</span>
+                    </div>
+                    <div class="flex-shrink-0 px-8 py-5 bg-slate-900/50 backdrop-blur-md border border-emerald-500/20 rounded-2xl hover:border-emerald-400 transition-colors duration-300">
+                        <span class="text-white font-bold text-lg md:text-xl">Graphics Design</span>
+                    </div>
+                    <div class="flex-shrink-0 px-8 py-5 bg-slate-900/50 backdrop-blur-md border border-emerald-500/20 rounded-2xl hover:border-emerald-400 transition-colors duration-300">
+                        <span class="text-white font-bold text-lg md:text-xl">Brand Identity</span>
+                    </div>
+                    <!-- Duplicate for Loop -->
+                    <div class="flex-shrink-0 px-8 py-5 bg-slate-900/50 backdrop-blur-md border border-emerald-500/20 rounded-2xl hover:border-emerald-400 transition-colors duration-300">
+                        <span class="text-white font-bold text-lg md:text-xl">Website Design</span>
+                    </div>
+                    <div class="flex-shrink-0 px-8 py-5 bg-slate-900/50 backdrop-blur-md border border-emerald-500/20 rounded-2xl hover:border-emerald-400 transition-colors duration-300">
+                        <span class="text-white font-bold text-lg md:text-xl">Copywriting</span>
+                    </div>
+                    <div class="flex-shrink-0 px-8 py-5 bg-slate-900/50 backdrop-blur-md border border-emerald-500/20 rounded-2xl hover:border-emerald-400 transition-colors duration-300">
+                        <span class="text-white font-bold text-lg md:text-xl">SEO Optimization</span>
+                    </div>
+                    <div class="flex-shrink-0 px-8 py-5 bg-slate-900/50 backdrop-blur-md border border-emerald-500/20 rounded-2xl hover:border-emerald-400 transition-colors duration-300">
+                        <span class="text-white font-bold text-lg md:text-xl">Graphics Design</span>
+                    </div>
+                    <div class="flex-shrink-0 px-8 py-5 bg-slate-900/50 backdrop-blur-md border border-emerald-500/20 rounded-2xl hover:border-emerald-400 transition-colors duration-300">
+                        <span class="text-white font-bold text-lg md:text-xl">Brand Identity</span>
+                    </div>
                 </div>
-                <div class="px-8 py-5 bg-slate-900/50 backdrop-blur-md border border-emerald-500/20 rounded-2xl hover:border-emerald-400 transition-colors duration-300 flex-shrink-0">
-                    <span class="text-white font-bold text-lg">Sales Funnel Strategy</span>
-                </div>
-                <div class="px-8 py-5 bg-slate-900/50 backdrop-blur-md border border-emerald-500/20 rounded-2xl hover:border-emerald-400 transition-colors duration-300 flex-shrink-0">
-                    <span class="text-white font-bold text-lg">Copywriting</span>
-                </div>
-                <div class="px-8 py-5 bg-slate-900/50 backdrop-blur-md border border-emerald-500/20 rounded-2xl hover:border-emerald-400 transition-colors duration-300 flex-shrink-0">
-                    <span class="text-white font-bold text-lg">SEO Optimization</span>
-                </div>
-                <!-- Duplicate for Loop -->
-                <div class="px-8 py-5 bg-slate-900/50 backdrop-blur-md border border-emerald-500/20 rounded-2xl hover:border-emerald-400 transition-colors duration-300 flex-shrink-0">
-                    <span class="text-white font-bold text-lg">Website Design</span>
-                </div>
-                <div class="px-8 py-5 bg-slate-900/50 backdrop-blur-md border border-emerald-500/20 rounded-2xl hover:border-emerald-400 transition-colors duration-300 flex-shrink-0">
-                    <span class="text-white font-bold text-lg">Sales Funnel Strategy</span>
-                </div>
-                <div class="px-8 py-5 bg-slate-900/50 backdrop-blur-md border border-emerald-500/20 rounded-2xl hover:border-emerald-400 transition-colors duration-300 flex-shrink-0">
-                    <span class="text-white font-bold text-lg">Copywriting</span>
-                </div>
-                <div class="px-8 py-5 bg-slate-900/50 backdrop-blur-md border border-emerald-500/20 rounded-2xl hover:border-emerald-400 transition-colors duration-300 flex-shrink-0">
-                    <span class="text-white font-bold text-lg">SEO Optimization</span>
+            </div>
+
+            <!-- Row 2: Moving Right -->
+            <div class="flex overflow-hidden select-none">
+                <div class="flex flex-nowrap gap-6 animate-scroll-right">
+                    <!-- Original Set -->
+                    <div class="flex-shrink-0 px-8 py-5 bg-slate-900/50 backdrop-blur-md border border-emerald-500/20 rounded-2xl hover:border-emerald-400 transition-colors duration-300">
+                        <span class="text-white font-bold text-lg md:text-xl">Sales Funnel Design</span>
+                    </div>
+                    <div class="flex-shrink-0 px-8 py-5 bg-slate-900/50 backdrop-blur-md border border-emerald-500/20 rounded-2xl hover:border-emerald-400 transition-colors duration-300">
+                        <span class="text-white font-bold text-lg md:text-xl">Video Editing</span>
+                    </div>
+                    <div class="flex-shrink-0 px-8 py-5 bg-slate-900/50 backdrop-blur-md border border-emerald-500/20 rounded-2xl hover:border-emerald-400 transition-colors duration-300">
+                        <span class="text-white font-bold text-lg md:text-xl">Facebook Ads</span>
+                    </div>
+                    <div class="flex-shrink-0 px-8 py-5 bg-slate-900/50 backdrop-blur-md border border-emerald-500/20 rounded-2xl hover:border-emerald-400 transition-colors duration-300">
+                        <span class="text-white font-bold text-lg md:text-xl">Email Marketing</span>
+                    </div>
+                    <div class="flex-shrink-0 px-8 py-5 bg-slate-900/50 backdrop-blur-md border border-emerald-500/20 rounded-2xl hover:border-emerald-400 transition-colors duration-300">
+                        <span class="text-white font-bold text-lg md:text-xl">UI/UX Strategy</span>
+                    </div>
+                    <!-- Duplicate for Loop -->
+                    <div class="flex-shrink-0 px-8 py-5 bg-slate-900/50 backdrop-blur-md border border-emerald-500/20 rounded-2xl hover:border-emerald-400 transition-colors duration-300">
+                        <span class="text-white font-bold text-lg md:text-xl">Sales Funnel Design</span>
+                    </div>
+                    <div class="flex-shrink-0 px-8 py-5 bg-slate-900/50 backdrop-blur-md border border-emerald-500/20 rounded-2xl hover:border-emerald-400 transition-colors duration-300">
+                        <span class="text-white font-bold text-lg md:text-xl">Video Editing</span>
+                    </div>
+                    <div class="flex-shrink-0 px-8 py-5 bg-slate-900/50 backdrop-blur-md border border-emerald-500/20 rounded-2xl hover:border-emerald-400 transition-colors duration-300">
+                        <span class="text-white font-bold text-lg md:text-xl">Facebook Ads</span>
+                    </div>
+                    <div class="flex-shrink-0 px-8 py-5 bg-slate-900/50 backdrop-blur-md border border-emerald-500/20 rounded-2xl hover:border-emerald-400 transition-colors duration-300">
+                        <span class="text-white font-bold text-lg md:text-xl">Email Marketing</span>
+                    </div>
+                    <div class="flex-shrink-0 px-8 py-5 bg-slate-900/50 backdrop-blur-md border border-emerald-500/20 rounded-2xl hover:border-emerald-400 transition-colors duration-300">
+                        <span class="text-white font-bold text-lg md:text-xl">UI/UX Strategy</span>
+                    </div>
                 </div>
             </div>
         </div>
-
-        <!-- Row 2: Right to Left -->
-        <div class="flex overflow-hidden">
-            <div class="animate-scroll-reverse flex gap-4 px-2">
-                <!-- Original Items -->
-                <div class="px-8 py-5 bg-slate-900/50 backdrop-blur-md border border-emerald-500/20 rounded-2xl hover:border-emerald-400 transition-colors duration-300 flex-shrink-0">
-                    <span class="text-white font-bold text-lg">Email Marketing</span>
-                </div>
-                <div class="px-8 py-5 bg-slate-900/50 backdrop-blur-md border border-emerald-500/20 rounded-2xl hover:border-emerald-400 transition-colors duration-300 flex-shrink-0">
-                    <span class="text-white font-bold text-lg">E-Learning Systems</span>
-                </div>
-                <div class="px-8 py-5 bg-slate-900/50 backdrop-blur-md border border-emerald-500/20 rounded-2xl hover:border-emerald-400 transition-colors duration-300 flex-shrink-0">
-                    <span class="text-white font-bold text-lg">Brand Identity</span>
-                </div>
-                <div class="px-8 py-5 bg-slate-900/50 backdrop-blur-md border border-emerald-500/20 rounded-2xl hover:border-emerald-400 transition-colors duration-300 flex-shrink-0">
-                    <span class="text-white font-bold text-lg">Conversion Optimization</span>
-                </div>
-                <!-- Duplicate for Loop -->
-                <div class="px-8 py-5 bg-slate-900/50 backdrop-blur-md border border-emerald-500/20 rounded-2xl hover:border-emerald-400 transition-colors duration-300 flex-shrink-0">
-                    <span class="text-white font-bold text-lg">Email Marketing</span>
-                </div>
-                <div class="px-8 py-5 bg-slate-900/50 backdrop-blur-md border border-emerald-500/20 rounded-2xl hover:border-emerald-400 transition-colors duration-300 flex-shrink-0">
-                    <span class="text-white font-bold text-lg">E-Learning Systems</span>
-                </div>
-                <div class="px-8 py-5 bg-slate-900/50 backdrop-blur-md border border-emerald-500/20 rounded-2xl hover:border-emerald-400 transition-colors duration-300 flex-shrink-0">
-                    <span class="text-white font-bold text-lg">Brand Identity</span>
-                </div>
-                <div class="px-8 py-5 bg-slate-900/50 backdrop-blur-md border border-emerald-500/20 rounded-2xl hover:border-emerald-400 transition-colors duration-300 flex-shrink-0">
-                    <span class="text-white font-bold text-lg">Conversion Optimization</span>
-                </div>
-            </div>
-        </div>
-
     </div>
 </section></div>
 
 <!-- Flagship Projects Grid -->
-<div id="flagship-projects-grid" class="scroll-mt-20"><section id="projects" class="reveal py-24 bg-slate-950 border-t border-emerald-500/10 font-['Montserrat']">
+<div id="flagship-projects-grid" class="scroll-mt-20"><style>
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap');
+</style>
+
+<section id="projects" class="py-24 bg-slate-950 border-t border-emerald-500/10 font-['Plus_Jakarta_Sans',_sans-serif]">
     <div class="max-w-7xl mx-auto px-4 md:px-6">
-        <div class="flex flex-col md:flex-row md:items-end justify-between mb-16 gap-8 text-center md:text-left">
-            <div class="max-w-2xl">
+        <!-- Header Area -->
+        <div class="flex flex-col md:flex-row md:items-end justify-between mb-16 gap-8">
+            <div class="max-w-2xl text-center md:text-left">
                 <h2 class="text-emerald-500 font-bold tracking-widest text-sm uppercase mb-4">Case Studies</h2>
                 <h3 class="text-4xl md:text-6xl font-extrabold text-white leading-tight">Proven Results for Real Clients</h3>
             </div>
-            <p class="text-slate-400 text-lg max-w-md leading-relaxed">
+            <p class="text-slate-400 text-lg max-w-md leading-relaxed text-center md:text-left">
                 From "ghost towns" to high-converting machines, here is the proof that this simple framework works.
             </p>
         </div>
 
-        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <!-- Project Grid -->
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+            
             <!-- Project 1 -->
-            <div class="group relative bg-slate-900/50 backdrop-blur-sm rounded-3xl overflow-hidden border border-slate-800 hover:border-emerald-500/30 transition-all duration-300">
+            <div class="group relative bg-slate-900/40 backdrop-blur-sm rounded-3xl overflow-hidden border border-slate-800 hover:border-emerald-500/20 transition-all duration-500">
                 <div class="aspect-[16/10] overflow-hidden">
                     <img src="https://zjmrfknhxmjasbglrebj.supabase.co/storage/v1/object/public/blog/cy9qms3wqmc-1778315809622.webp" alt="Creavert Website Redesign" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700">
                 </div>
                 <div class="p-8">
-                    <span class="text-emerald-500 text-xs font-bold uppercase tracking-widest">Website Design</span>
+                    <span class="text-emerald-500/80 text-xs font-bold uppercase tracking-widest">Website Design</span>
                     <h4 class="text-2xl font-bold text-white mt-3 mb-4">Creavert Website Redesign</h4>
                     <p class="text-slate-400 leading-relaxed mb-8">Creavert’s old site was confusing and cost them sales. We gave them a clean new look and a clear path to buy.</p>
-                    <a href="https://sabidigital.com/" target="_blank" class="inline-flex items-center gap-2 px-6 py-3 bg-indigo-600 text-white text-sm font-bold rounded-lg hover:bg-indigo-700 transition-all">View Live Project <i class="fas fa-arrow-up-right-from-square text-xs"></i></a>
+                    <a href="https://sabidigital.com/" target="_blank" class="inline-flex items-center justify-center px-6 py-2.5 border border-slate-700 text-slate-300 text-sm font-semibold rounded-xl hover:bg-emerald-500/10 hover:border-emerald-500/50 hover:text-emerald-400 transition-all duration-300">
+                        View Live Project
+                    </a>
                 </div>
             </div>
 
             <!-- Project 2 -->
-            <div class="group relative bg-slate-900/50 backdrop-blur-sm rounded-3xl overflow-hidden border border-slate-800 hover:border-emerald-500/30 transition-all duration-300">
+            <div class="group relative bg-slate-900/40 backdrop-blur-sm rounded-3xl overflow-hidden border border-slate-800 hover:border-emerald-500/20 transition-all duration-500">
                 <div class="aspect-[16/10] overflow-hidden">
                     <img src="https://sabidigital.com/wp-content/uploads/2025/09/sabimentors-homepage-tiny.webp" alt="Sabimentors Development" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700">
                 </div>
                 <div class="p-8">
-                    <span class="text-emerald-500 text-xs font-bold uppercase tracking-widest">Brand Identity</span>
-                    <h4 class="text-2xl font-bold text-white mt-3 mb-4">Sabimentors Platform</h4>
+                    <span class="text-emerald-500/80 text-xs font-bold uppercase tracking-widest">E-Learning Development</span>
+                    <h4 class="text-2xl font-bold text-white mt-3 mb-4 lg:text-white lg:font-[''Inter',_sans-serif'] lg:text-[24px] lg:mt-[12px] lg:mb-[16px]">Sabimentors Brand Identity &amp; Web Design</h4>
                     <p class="text-slate-400 leading-relaxed mb-8">Built a professional brand identity and a custom e-learning platform that turned expertise into a digital business.</p>
-                    <a href="https://sabimentors.com/" target="_blank" class="inline-flex items-center gap-2 px-6 py-3 bg-indigo-600 text-white text-sm font-bold rounded-lg hover:bg-indigo-700 transition-all">View Live Project <i class="fas fa-arrow-up-right-from-square text-xs"></i></a>
+                    <a href="https://sabimentors.com/" target="_blank" class="inline-flex items-center justify-center px-6 py-2.5 border border-slate-700 text-slate-300 text-sm font-semibold rounded-xl hover:bg-emerald-500/10 hover:border-emerald-500/50 hover:text-emerald-400 transition-all duration-300">
+                        View Live Project
+                    </a>
                 </div>
             </div>
 
             <!-- Project 3 -->
-            <div class="group relative bg-slate-900/50 backdrop-blur-sm rounded-3xl overflow-hidden border border-slate-800 hover:border-emerald-500/30 transition-all duration-300">
+            <div class="group relative bg-slate-900/40 backdrop-blur-sm rounded-3xl overflow-hidden border border-slate-800 hover:border-emerald-500/20 transition-all duration-500">
                 <div class="aspect-[16/10] overflow-hidden">
                     <img src="https://flyingtemplates.com/wp-content/uploads/2026/04/copywriting-ai-app.funnelcraftai.com_-scaled.webp" alt="High-Ticket Coaching Launch" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700">
                 </div>
                 <div class="p-8">
-                    <span class="text-emerald-500 text-xs font-bold uppercase tracking-widest">Sales Funnel</span>
-                    <h4 class="text-2xl font-bold text-white mt-3 mb-4">High-Ticket Launch</h4>
-                    <p class="text-slate-400 leading-relaxed mb-8">45% increase in lead captures and $12,000 in new revenue generated in just 30 days.</p>
-                    <a href="#contact" class="inline-flex items-center gap-2 px-6 py-3 bg-emerald-600 text-white text-sm font-bold rounded-lg hover:bg-emerald-500 transition-all">Book Similar Project</a>
+                    <span class="text-emerald-500/80 text-xs font-bold uppercase tracking-widest">Sales Funnel</span>
+                    <h4 class="text-2xl font-bold text-white mt-3 mb-4">High-Ticket Coaching Launch</h4>
+                    <p class="text-slate-400 leading-relaxed mb-8">45% increase in lead captures and $12,000 in new revenue generated in just 30 days of operation.</p>
+                    <a href="#contact" class="inline-flex items-center justify-center px-6 py-2.5 border border-slate-700 text-slate-300 text-sm font-semibold rounded-xl hover:bg-emerald-500/10 hover:border-emerald-500/50 hover:text-emerald-400 transition-all duration-300">
+                        Book Similar Project
+                    </a>
                 </div>
             </div>
+
+        </div>
+
+        <!-- See More Toggle -->
+        <input type="checkbox" id="show-more-projects" class="hidden peer">
+        <div class="hidden peer-checked:grid grid-cols-1 md:grid-cols-3 gap-8 mt-8 animate-in fade-in slide-in-from-bottom-4 duration-500" style="transition: 0.8s ease-out;">
+            <div class="group relative bg-slate-900/20 rounded-3xl p-12 border border-slate-800 border-dashed text-center flex flex-col items-center justify-center">
+                <div class="w-12 h-12 rounded-full bg-emerald-500/5 flex items-center justify-center mb-4">
+                    <svg class="w-6 h-6 text-emerald-500/50" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6v6m0 0v6m0-6h6m-6 0H6"></path></svg>
+                </div>
+                <p class="text-slate-500 font-medium italic">More case studies coming soon...</p>
+            </div>
+        </div>
+
+        <div class="mt-16 text-center">
+            <label for="show-more-projects" class="inline-block px-8 py-3 border border-emerald-500/30 text-emerald-500/80 text-sm font-bold rounded-xl cursor-pointer hover:bg-emerald-500 hover:text-white transition-all duration-300 peer-checked:hidden">
+                View All Work
+            </label>
         </div>
     </div>
 </section></div>
 
 <!-- Our Services -->
-<div id="our-services" class="scroll-mt-20"><section id="services" class="reveal py-24 bg-slate-950 relative">
+<div id="our-services" class="scroll-mt-20"><section id="services" class="py-24 bg-slate-950 grid-bg relative">
     <div class="max-w-7xl mx-auto px-4 md:px-6">
         <div class="text-center mb-16">
             <h2 class="text-emerald-500 font-bold tracking-widest text-sm uppercase mb-4">How I Help You Grow</h2>
@@ -416,11 +553,12 @@
         </div>
 
         <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+            
             <div class="p-8 bg-slate-900/80 border border-slate-800 rounded-2xl hover:border-emerald-500/50 transition-all group">
                 <div class="w-12 h-12 bg-emerald-500/10 rounded-lg flex items-center justify-center text-emerald-400 mb-6 group-hover:scale-110 transition-transform">
                     <i class="fas fa-desktop text-xl"></i>
                 </div>
-                <h4 class="text-xl font-bold text-white mb-4">Website Design</h4>
+                <h4 class="text-xl font-bold text-white mb-4">Professional Website Design</h4>
                 <p class="text-slate-400 text-sm leading-relaxed mb-6">Custom, mobile-ready websites that turn casual visitors into paying customers and build instant trust.</p>
                 <p class="text-emerald-400 font-bold">From $500</p>
             </div>
@@ -429,7 +567,7 @@
                 <div class="w-12 h-12 bg-emerald-500/10 rounded-lg flex items-center justify-center text-emerald-400 mb-6 group-hover:scale-110 transition-transform">
                     <i class="fas fa-bullseye text-xl"></i>
                 </div>
-                <h4 class="text-xl font-bold text-white mb-4">Landing Pages</h4>
+                <h4 class="text-xl font-bold text-white mb-4">Landing Page Design</h4>
                 <p class="text-slate-400 text-sm leading-relaxed mb-6">Custom landing pages built for speed and focused on a single call to action to maximize ROI.</p>
                 <p class="text-emerald-400 font-bold">From $500</p>
             </div>
@@ -438,7 +576,7 @@
                 <div class="w-12 h-12 bg-emerald-500/10 rounded-lg flex items-center justify-center text-emerald-400 mb-6 group-hover:scale-110 transition-transform">
                     <i class="fas fa-filter text-xl"></i>
                 </div>
-                <h4 class="text-xl font-bold text-white mb-4">Sales Funnels</h4>
+                <h4 class="text-xl font-bold text-white mb-4">Sales Funnel Design</h4>
                 <p class="text-slate-400 text-sm leading-relaxed mb-6">Automated email sequences and seamless checkouts that turn leads into buyers on autopilot.</p>
                 <p class="text-emerald-400 font-bold">From $500</p>
             </div>
@@ -447,16 +585,17 @@
                 <div class="w-12 h-12 bg-emerald-500/10 rounded-lg flex items-center justify-center text-emerald-400 mb-6 group-hover:scale-110 transition-transform">
                     <i class="fas fa-search text-xl"></i>
                 </div>
-                <h4 class="text-xl font-bold text-white mb-4">SEO Strategy</h4>
+                <h4 class="text-xl font-bold text-white mb-4">Search Engine Optimization</h4>
                 <p class="text-slate-400 text-sm leading-relaxed mb-6">Rank higher in search results and bring a steady stream of free, high-quality traffic to your site.</p>
                 <p class="text-emerald-400 font-bold">From $500</p>
             </div>
+
         </div>
     </div>
 </section></div>
 
 <!-- Pricing & Packages -->
-<div id="pricing--packages" class="scroll-mt-20"><section id="pricing" class="reveal py-24 bg-slate-950 border-y border-emerald-500/10">
+<div id="pricing--packages" class="scroll-mt-20"><section id="pricing" class="py-24 bg-slate-950 border-y border-emerald-500/10">
     <div class="max-w-7xl mx-auto px-4 md:px-6">
         <div class="text-center mb-16">
             <h2 class="text-emerald-500 font-bold tracking-widest text-sm uppercase mb-4">Transparent Pricing</h2>
@@ -464,15 +603,25 @@
         </div>
 
         <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+            
             <!-- Tier 1 -->
             <div class="bg-slate-900/50 border border-slate-800 rounded-2xl p-8 flex flex-col hover:border-emerald-500/30 transition-all">
-                <h4 class="text-white font-bold text-xl mb-2">Landing Page</h4>
+                <h4 class="text-white font-bold text-xl mb-2">Landing Page Design</h4>
                 <p class="text-slate-500 text-sm mb-6">Perfect for turning visitors into customers fast.</p>
                 <div class="text-4xl font-extrabold text-white mb-8">$500</div>
-                <ul class="space-y-4 mb-8 flex-grow text-slate-300 text-sm">
-                    <li class="flex items-center gap-3"><i class="fas fa-check text-emerald-500"></i> Custom Conversion Page</li>
-                    <li class="flex items-center gap-3"><i class="fas fa-check text-emerald-500"></i> Mobile Responsive Design</li>
-                    <li class="flex items-center gap-3"><i class="fas fa-check text-emerald-500"></i> Speed Optimization</li>
+                <ul class="space-y-4 mb-8 flex-grow">
+                    <li class="flex items-start gap-3 text-slate-300 text-sm">
+                        <i class="fas fa-check text-emerald-500 mt-1"></i>
+                        Custom Conversion Page
+                    </li>
+                    <li class="flex items-start gap-3 text-slate-300 text-sm">
+                        <i class="fas fa-check text-emerald-500 mt-1"></i>
+                        Mobile Responsive Design
+                    </li>
+                    <li class="flex items-start gap-3 text-slate-300 text-sm">
+                        <i class="fas fa-check text-emerald-500 mt-1"></i>
+                        Speed Optimization
+                    </li>
                 </ul>
                 <a href="#contact" class="w-full py-3 border border-emerald-500/50 text-emerald-400 font-bold rounded-xl text-center hover:bg-emerald-500/10 transition-all">Select Tier</a>
             </div>
@@ -483,33 +632,55 @@
                 <h4 class="text-white font-bold text-xl mb-2">Professional Website</h4>
                 <p class="text-slate-500 text-sm mb-6">For businesses ready to look credible online.</p>
                 <div class="text-4xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-emerald-400 to-cyan-400 mb-8">$1,500</div>
-                <ul class="space-y-4 mb-8 flex-grow text-slate-300 text-sm">
-                    <li class="flex items-center gap-3"><i class="fas fa-check text-emerald-500"></i> Full 5-Page Website</li>
-                    <li class="flex items-center gap-3"><i class="fas fa-check text-emerald-500"></i> Lead Capture Integration</li>
-                    <li class="flex items-center gap-3"><i class="fas fa-check text-emerald-500"></i> Advanced Trust-Building</li>
-                    <li class="flex items-center gap-3"><i class="fas fa-check text-emerald-500"></i> Basic SEO Setup</li>
+                <ul class="space-y-4 mb-8 flex-grow">
+                    <li class="flex items-start gap-3 text-slate-300 text-sm">
+                        <i class="fas fa-check text-emerald-500 mt-1"></i>
+                        Full 5-Page Website
+                    </li>
+                    <li class="flex items-start gap-3 text-slate-300 text-sm">
+                        <i class="fas fa-check text-emerald-500 mt-1"></i>
+                        Lead Capture Integration
+                    </li>
+                    <li class="flex items-start gap-3 text-slate-300 text-sm">
+                        <i class="fas fa-check text-emerald-500 mt-1"></i>
+                        Advanced Trust-Building Design
+                    </li>
+                    <li class="flex items-start gap-3 text-slate-300 text-sm">
+                        <i class="fas fa-check text-emerald-500 mt-1"></i>
+                        Basic SEO Setup
+                    </li>
                 </ul>
                 <a href="#contact" class="w-full py-3 bg-emerald-600 text-white font-bold rounded-xl text-center hover:bg-emerald-500 transition-all shadow-[0_0_15px_rgba(16,185,129,0.4)]">Book Call</a>
             </div>
 
             <!-- Tier 3 -->
             <div class="bg-slate-900/50 border border-slate-800 rounded-2xl p-8 flex flex-col hover:border-emerald-500/30 transition-all">
-                <h4 class="text-white font-bold text-xl mb-2">Custom Funnel</h4>
+                <h4 class="text-white font-bold text-xl mb-2">Search Engine Optimization</h4>
                 <p class="text-slate-500 text-sm mb-6">Get customers without paying for ads.</p>
-                <div class="text-4xl font-extrabold text-white mb-8">$1,500</div>
-                <ul class="space-y-4 mb-8 flex-grow text-slate-300 text-sm">
-                    <li class="flex items-center gap-3"><i class="fas fa-check text-emerald-500"></i> Keyword Research</li>
-                    <li class="flex items-center gap-3"><i class="fas fa-check text-emerald-500"></i> On-Page Optimization</li>
-                    <li class="flex items-center gap-3"><i class="fas fa-check text-emerald-500"></i> Technical SEO Audit</li>
+                <div class="text-4xl font-extrabold text-white mb-8">$500</div>
+                <ul class="space-y-4 mb-8 flex-grow">
+                    <li class="flex items-start gap-3 text-slate-300 text-sm">
+                        <i class="fas fa-check text-emerald-500 mt-1"></i>
+                        Keyword Research
+                    </li>
+                    <li class="flex items-start gap-3 text-slate-300 text-sm">
+                        <i class="fas fa-check text-emerald-500 mt-1"></i>
+                        On-Page Optimization
+                    </li>
+                    <li class="flex items-start gap-3 text-slate-300 text-sm">
+                        <i class="fas fa-check text-emerald-500 mt-1"></i>
+                        Technical SEO Audit
+                    </li>
                 </ul>
                 <a href="#contact" class="w-full py-3 border border-emerald-500/50 text-emerald-400 font-bold rounded-xl text-center hover:bg-emerald-500/10 transition-all">Select Tier</a>
             </div>
+
         </div>
     </div>
 </section></div>
 
 <!-- Client Testimonials -->
-<div id="client-testimonials" class="scroll-mt-20"><section id="reviews" class="reveal py-24 bg-slate-950">
+<div id="client-testimonials" class="scroll-mt-20"><section id="reviews" class="py-24 bg-slate-950 grid-bg">
     <div class="max-w-7xl mx-auto px-4 md:px-6">
         <div class="text-center mb-16">
             <h2 class="text-emerald-500 font-bold tracking-widest text-sm uppercase mb-4">Proof & Endorsements</h2>
@@ -517,9 +688,11 @@
         </div>
 
         <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+            
             <div class="bg-slate-900 p-8 rounded-2xl border border-slate-800 relative">
+                <div class="absolute -top-4 -left-4 text-emerald-500/20 text-6xl font-serif">“</div>
                 <p class="text-slate-300 text-lg italic mb-8 relative z-10">
-                    "I was hesitant to work with Kelvin because I had been let down by others in the past. Within thirty days, he helped me hit a 4x return on my ad spend. My business finally feels stable."
+                    "I was hesitant to work with SabiDigital because I had been let down by others in the past. Within thirty days, he helped me hit a 4x return on my ad spend. My business finally feels stable and we just had our first $20,000 month."
                 </p>
                 <div class="flex items-center gap-4">
                     <img src="https://zjmrfknhxmjasbglrebj.supabase.co/storage/v1/object/public/brand/cnzo9404rx-1778120229368.webp" alt="Osaro Destiny" class="w-12 h-12 rounded-full object-cover">
@@ -527,12 +700,16 @@
                         <h4 class="text-white font-bold">Osaro Destiny</h4>
                         <p class="text-slate-500 text-xs uppercase tracking-widest">CEO, Ekiema Wellness</p>
                     </div>
+                    <div class="ml-auto flex text-emerald-400 text-xs">
+                        <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+                    </div>
                 </div>
             </div>
 
             <div class="bg-slate-900 p-8 rounded-2xl border border-slate-800 relative">
+                <div class="absolute -top-4 -left-4 text-emerald-500/20 text-6xl font-serif">“</div>
                 <p class="text-slate-300 text-lg italic mb-8 relative z-10">
-                    "I honestly doubted if Kelvin's strategy would work for us, but the numbers don't lie. We saw a 30% increase in our conversion rate and an extra $15,000 in sales in just two months."
+                    "I honestly doubted if Kelvin's strategy would work for us, but the numbers don't lie. We saw a 30% increase in our conversion rate and an extra $15,000 in sales in just two months. He truly transformed our marketing efforts."
                 </p>
                 <div class="flex items-center gap-4">
                     <img src="https://zjmrfknhxmjasbglrebj.supabase.co/storage/v1/object/public/brand/cnzo9404rx-1778120229368.webp" alt="Jonathan" class="w-12 h-12 rounded-full object-cover">
@@ -540,97 +717,231 @@
                         <h4 class="text-white font-bold">Jonathan</h4>
                         <p class="text-slate-500 text-xs uppercase tracking-widest">CEO, Goldchek Herbals</p>
                     </div>
+                    <div class="ml-auto flex text-emerald-400 text-xs">
+                        <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+                    </div>
                 </div>
             </div>
+
         </div>
     </div>
 </section></div>
 
 <!-- Interactive Contact & Lead Capture -->
-<div id="interactive-contact--lead-capture" class="scroll-mt-20"><section id="contact" class="reveal py-20 md:py-32 bg-slate-950 border-t border-emerald-500/10 font-['Montserrat'] overflow-hidden relative">
+<div id="interactive-contact--lead-capture" class="scroll-mt-20"><style>
+    @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap');
+</style>
+
+<section id="contact" class="py-20 md:py-32 bg-slate-950 border-t border-emerald-500/10 font-['Inter',sans-serif] overflow-hidden relative">
+    <!-- Background Accents -->
+    <div class="absolute top-0 right-0 -translate-y-1/2 translate-x-1/4 w-72 md:w-96 h-72 md:h-96 bg-emerald-500/10 rounded-full blur-[120px] pointer-events-none"></div>
+    <div class="absolute bottom-0 left-0 translate-y-1/2 -translate-x-1/4 w-72 md:w-96 h-72 md:h-96 bg-emerald-600/10 rounded-full blur-[120px] pointer-events-none"></div>
+
     <div class="max-w-7xl mx-auto px-4 md:px-6 relative z-10">
         <div class="grid lg:grid-cols-2 gap-12 md:gap-16 items-start">
+            
+            <!-- Content Side -->
             <div class="max-w-xl">
                 <h2 class="text-emerald-400 font-bold tracking-widest text-sm uppercase mb-4">Get In Touch</h2>
-                <h3 class="text-4xl md:text-6xl font-extrabold text-white mb-6 leading-tight">Ready to grow your business for real?</h3>
+                <h3 class="text-4xl md:text-6xl font-extrabold text-white mb-6 leading-tight">
+                    Ready to grow your business for real?
+                </h3>
                 <p class="text-slate-400 text-lg md:text-xl mb-10 leading-relaxed">
-                    Stop guessing and start growing. No more trial and error. Send me a quick message and we will build a system that works while you sleep.
+                    Stop guessing and start growing. No more trial and error. Just send me a quick message and we will build a system that works while you sleep.
                 </p>
                 
                 <div class="space-y-6 mb-10">
                     <div class="flex items-center gap-5 group">
-                        <div class="w-12 h-12 bg-emerald-500/10 rounded-2xl flex items-center justify-center text-emerald-400 border border-emerald-500/20">
-                            <i class="fas fa-envelope"></i>
+                        <div class="w-12 h-12 bg-emerald-500/10 rounded-2xl flex items-center justify-center text-emerald-400 border border-emerald-500/20 group-hover:bg-emerald-500/20 transition-all">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+                            </svg>
                         </div>
                         <div>
                             <p class="text-slate-500 text-xs uppercase font-bold tracking-wider">Email me directly</p>
                             <span class="text-slate-200 text-lg font-semibold">contact@sabidigital.com</span>
                         </div>
                     </div>
+                    <div class="flex items-center gap-5 group">
+                        <div class="w-12 h-12 bg-emerald-500/10 rounded-2xl flex items-center justify-center text-emerald-400 border border-emerald-500/20 group-hover:bg-emerald-500/20 transition-all">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z" />
+                            </svg>
+                        </div>
+                        <div>
+                            <p class="text-slate-500 text-xs uppercase font-bold tracking-wider">Fast response</p>
+                            <span class="text-slate-200 text-lg font-semibold">I usually reply within 24 hours</span>
+                        </div>
+                    </div>
                 </div>
 
                 <div class="flex gap-6">
-                    <a href="https://facebook.com/osazeekelvinking" target="_blank" class="text-slate-500 hover:text-emerald-400 transition-all text-2xl"><i class="fab fa-facebook"></i></a>
-                    <a href="https://instagram.com/osazeekelvinking" target="_blank" class="text-slate-500 hover:text-emerald-400 transition-all text-2xl"><i class="fab fa-instagram"></i></a>
-                    <a href="https://www.linkedin.com/in/kelvinkingofficial/" target="_blank" class="text-slate-500 hover:text-emerald-400 transition-all text-2xl"><i class="fab fa-linkedin"></i></a>
+                    <a href="https://facebook.com/osazeekelvinking" target="_blank" rel="noopener" class="text-slate-500 hover:text-emerald-400 transition-all transform hover:-translate-y-1 text-2xl">
+                        <i class="fab fa-facebook"></i>
+                    </a>
+                    <a href="https://twitter.com/okelvinking" target="_blank" rel="noopener" class="text-slate-500 hover:text-emerald-400 transition-all transform hover:-translate-y-1 text-2xl">
+                        <i class="fab fa-twitter"></i>
+                    </a>
+                    <a href="https://instagram.com/osazeekelvinking" target="_blank" rel="noopener" class="text-slate-500 hover:text-emerald-400 transition-all transform hover:-translate-y-1 text-2xl">
+                        <i class="fab fa-instagram"></i>
+                    </a>
+                    <a href="https://www.linkedin.com/in/kelvinkingofficial/" target="_blank" rel="noopener" class="text-slate-500 hover:text-emerald-400 transition-all transform hover:-translate-y-1 text-2xl">
+                        <i class="fab fa-linkedin"></i>
+                    </a>
                 </div>
             </div>
 
-            <div class="relative bg-slate-900/80 backdrop-blur-xl p-6 rounded-3xl border border-white/10 shadow-2xl">
-                <iframe data-tally-src="https://tally.so/embed/3yav1x?alignLeft=1&hideTitle=1&transparentBackground=1&dynamicHeight=1" loading="lazy" width="100%" height="528" frameborder="0" title="Contact Form"></iframe>
-                <script>var d=document,w="https://tally.so/widgets/embed.js",v=function(){"undefined"!=typeof Tally?Tally.loadEmbeds():d.querySelectorAll("iframe[data-tally-src]:not([src])").forEach((function(e){e.src=e.dataset.tallySrc}))};if("undefined"!=typeof Tally)v();else if(d.querySelector('script[src="'+w+'"]')==null){var s=d.createElement("script");s.src=w,s.onload=v,s.onerror=v,d.body.appendChild(s);}</script>
+            <!-- Form Side -->
+            <div class="relative">
+                <div class="absolute -inset-1 bg-gradient-to-r from-emerald-500/20 to-emerald-800/20 rounded-3xl blur-xl opacity-50"></div>
+                <div class="relative bg-slate-900/80 backdrop-blur-xl p-2 md:p-4 rounded-3xl border border-white/10 shadow-2xl overflow-hidden">
+                    <iframe data-tally-src="https://tally.so/embed/3yav1x?alignLeft=1&hideTitle=1&transparentBackground=1&dynamicHeight=1" loading="lazy" width="100%" height="528" frameborder="0" marginheight="0" marginwidth="0" title="Web Design Contact Form Dark"></iframe>
+                    <script>var d=document,w="https://tally.so/widgets/embed.js",v=function(){"undefined"!=typeof Tally?Tally.loadEmbeds():d.querySelectorAll("iframe[data-tally-src]:not([src])").forEach((function(e){e.src=e.dataset.tallySrc}))};if("undefined"!=typeof Tally)v();else if(d.querySelector('script[src="'+w+'"]')==null){var s=d.createElement("script");s.src=w,s.onload=v,s.onerror=v,d.body.appendChild(s);}</script>
+                </div>
+                
+                <p class="text-center text-slate-500 text-xs mt-6">
+                    Your info is safe. I hate spam as much as you do.
+                </p>
             </div>
+
         </div>
     </div>
 </section></div>
 
 <!-- Frequently Asked Questions -->
-<div id="frequently-asked-questions" class="scroll-mt-20"><section id="faq" class="reveal py-24 bg-slate-950 border-t border-emerald-500/10 relative overflow-hidden">
+<div id="frequently-asked-questions" class="scroll-mt-20"><style>
+    @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap');
+</style>
+
+<section id="faq" class="py-24 bg-slate-950 border-t border-emerald-500/10 relative overflow-hidden" style="font-family: 'Inter', sans-serif;">
+    <!-- Background Decoration -->
+    <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full h-full pointer-events-none opacity-20">
+        <div class="absolute top-0 left-0 w-96 h-96 bg-emerald-600/20 blur-[120px] rounded-full"></div>
+        <div class="absolute bottom-0 right-0 w-96 h-96 bg-blue-600/10 blur-[120px] rounded-full"></div>
+    </div>
+
     <div class="max-w-3xl mx-auto px-4 md:px-6 relative z-10">
         <div class="text-center mb-16">
             <h2 class="text-emerald-500 font-bold tracking-[0.2em] text-sm uppercase mb-4">Got Questions?</h2>
             <h3 class="text-3xl md:text-5xl font-extrabold text-white tracking-tight">Frequently Asked Questions</h3>
+            <p class="mt-4 text-slate-400 text-lg">Everything you need to know about building your profitable online engine.</p>
         </div>
 
         <div class="space-y-4">
-            <div class="bg-slate-900/40 backdrop-blur-md border border-slate-800 rounded-2xl overflow-hidden">
+            <!-- FAQ Item 1 -->
+            <div class="bg-slate-900/40 backdrop-blur-md border border-slate-800 rounded-2xl overflow-hidden hover:border-emerald-500/30 transition-all duration-300">
                 <input type="checkbox" id="faq-1" class="peer hidden">
                 <label for="faq-1" class="flex items-center justify-between p-6 cursor-pointer group">
-                    <span class="text-white font-bold group-hover:text-emerald-400 transition-colors">How long does it take to build my store?</span>
-                    <i class="fas fa-plus text-emerald-500 transition-transform peer-checked:rotate-45"></i>
+                    <span class="text-white font-bold md:text-lg group-hover:text-emerald-400 transition-colors pr-4 text-left">How long does it take to build my store or funnel?</span>
+                    <div class="flex-shrink-0 w-8 h-8 bg-slate-800 rounded-lg flex items-center justify-center text-emerald-500 transition-transform duration-300 peer-checked:rotate-45">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4v16m8-8H4" />
+                        </svg>
+                    </div>
                 </label>
-                <div class="max-h-0 overflow-hidden peer-checked:max-h-96 transition-all duration-500">
-                    <div class="p-6 pt-0 text-slate-400 border-t border-slate-800/50 text-sm">
-                        Most projects like landing pages or professional websites are completed within 7 to 14 days. I focus on speed and quality so you can start getting paid what you are worth.
+                <div class="max-h-0 overflow-hidden peer-checked:max-h-96 transition-all duration-500 ease-in-out">
+                    <div class="p-6 pt-0 text-slate-400 border-t border-slate-800/50 leading-relaxed text-left">
+                        Most projects like landing pages or professional websites are completed within 7 to 14 days. More complex sales funnels with full automation usually take about 3 weeks. I focus on speed and quality so you can start getting paid what you are worth as soon as possible.
                     </div>
                 </div>
             </div>
-            <div class="bg-slate-900/40 backdrop-blur-md border border-slate-800 rounded-2xl overflow-hidden">
+
+            <!-- FAQ Item 2 -->
+            <div class="bg-slate-900/40 backdrop-blur-md border border-slate-800 rounded-2xl overflow-hidden hover:border-emerald-500/30 transition-all duration-300">
                 <input type="checkbox" id="faq-2" class="peer hidden">
                 <label for="faq-2" class="flex items-center justify-between p-6 cursor-pointer group">
-                    <span class="text-white font-bold group-hover:text-emerald-400 transition-colors">Do I need to be a tech genius?</span>
-                    <i class="fas fa-plus text-emerald-500 transition-transform peer-checked:rotate-45"></i>
+                    <span class="text-white font-bold md:text-lg group-hover:text-emerald-400 transition-colors pr-4 text-left">Do I need to be a tech genius to manage this?</span>
+                    <div class="flex-shrink-0 w-8 h-8 bg-slate-800 rounded-lg flex items-center justify-center text-emerald-500 transition-transform duration-300 peer-checked:rotate-45">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4v16m8-8H4" />
+                        </svg>
+                    </div>
                 </label>
-                <div class="max-h-0 overflow-hidden peer-checked:max-h-96 transition-all duration-500">
-                    <div class="p-6 pt-0 text-slate-400 border-t border-slate-800/50 text-sm">
-                        Not at all. I build simple systems that do the heavy lifting for you. Once we launch, I provide a clear roadmap so you can manage your business with total peace of mind.
+                <div class="max-h-0 overflow-hidden peer-checked:max-h-96 transition-all duration-500 ease-in-out">
+                    <div class="p-6 pt-0 text-slate-400 border-t border-slate-800/50 leading-relaxed text-left">
+                        Not at all. I build simple systems that do the heavy lifting for you. Once we launch, I provide a clear roadmap so you can manage your business with total peace of mind. You focus on your craft, and the technology takes care of the sales.
                     </div>
                 </div>
             </div>
+
+            <!-- FAQ Item 3 -->
+            <div class="bg-slate-900/40 backdrop-blur-md border border-slate-800 rounded-2xl overflow-hidden hover:border-emerald-500/30 transition-all duration-300">
+                <input type="checkbox" id="faq-3" class="peer hidden">
+                <label for="faq-3" class="flex items-center justify-between p-6 cursor-pointer group">
+                    <span class="text-white font-bold md:text-lg group-hover:text-emerald-400 transition-colors pr-4 text-left">What if I already have a website that isn't working?</span>
+                    <div class="flex-shrink-0 w-8 h-8 bg-slate-800 rounded-lg flex items-center justify-center text-emerald-500 transition-transform duration-300 peer-checked:rotate-45">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4v16m8-8H4" />
+                        </svg>
+                    </div>
+                </label>
+                <div class="max-h-0 overflow-hidden peer-checked:max-h-96 transition-all duration-500 ease-in-out">
+                    <div class="p-6 pt-0 text-slate-400 border-t border-slate-800/50 leading-relaxed text-left">
+                        I specialize in fixing "leaky buckets." We will look at why your current site is a ghost town and overhaul it using my proven framework. We will turn your digital business card into a high-converting machine that actually pays you every single day.
+                    </div>
+                </div>
+            </div>
+
+            <!-- FAQ Item 4 -->
+            <div class="bg-slate-900/40 backdrop-blur-md border border-slate-800 rounded-2xl overflow-hidden hover:border-emerald-500/30 transition-all duration-300">
+                <input type="checkbox" id="faq-4" class="peer hidden">
+                <label for="faq-4" class="flex items-center justify-between p-6 cursor-pointer group">
+                    <span class="text-white font-bold md:text-lg group-hover:text-emerald-400 transition-colors pr-4 text-left">Will my website work on mobile phones?</span>
+                    <div class="flex-shrink-0 w-8 h-8 bg-slate-800 rounded-lg flex items-center justify-center text-emerald-500 transition-transform duration-300 peer-checked:rotate-45">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4v16m8-8H4" />
+                        </svg>
+                    </div>
+                </label>
+                <div class="max-h-0 overflow-hidden peer-checked:max-h-96 transition-all duration-500 ease-in-out">
+                    <div class="p-6 pt-0 text-slate-400 border-t border-slate-800/50 leading-relaxed text-left">
+                        Yes. Every page I build is mobile-first. Since most people will visit your site from their phones, I make sure the experience is seamless, fast, and built to convert on every screen size.
+                    </div>
+                </div>
+            </div>
+
+            <!-- FAQ Item 5 -->
+            <div class="bg-slate-900/40 backdrop-blur-md border border-slate-800 rounded-2xl overflow-hidden hover:border-emerald-500/30 transition-all duration-300">
+                <input type="checkbox" id="faq-5" class="peer hidden">
+                <label for="faq-5" class="flex items-center justify-between p-6 cursor-pointer group">
+                    <span class="text-white font-bold md:text-lg group-hover:text-emerald-400 transition-colors pr-4 text-left">What kind of support do I get after we launch?</span>
+                    <div class="flex-shrink-0 w-8 h-8 bg-slate-800 rounded-lg flex items-center justify-center text-emerald-500 transition-transform duration-300 peer-checked:rotate-45">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4v16m8-8H4" />
+                        </svg>
+                    </div>
+                </label>
+                <div class="max-h-0 overflow-hidden peer-checked:max-h-96 transition-all duration-500 ease-in-out">
+                    <div class="p-6 pt-0 text-slate-400 border-t border-slate-800/50 leading-relaxed text-left">
+                        I don't just hand you a link and disappear. I make sure you are totally confident with your new engine. You get expert guidance and a step-by-step plan to ensure your business stays profitable and continues to grow.
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="mt-16 text-center">
+            <p class="text-slate-500 mb-6 font-medium">Still have questions?</p>
+            <a href="#contact" class="inline-flex items-center gap-3 px-10 py-5 bg-emerald-600 hover:bg-emerald-500 text-white font-bold rounded-2xl transition-all hover:scale-105 shadow-[0_10px_30px_rgba(16,185,129,0.3)] active:scale-95">
+                Chat With Me Directly
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 10h.01M12 10h.01M16 10h.01M9 16H5a2 2 0 01-2-2V6a2 2 0 012-2h14a2 2 0 012 2v8a2 2 0 01-2 2h-5l-5 5v-5z" />
+                </svg>
+            </a>
         </div>
     </div>
 </section></div>
 
 <!-- Global Footer -->
-<div id="global-footer" class="scroll-mt-20"><footer id="footer" class="reveal py-12 bg-slate-950 border-t border-slate-900 text-center font-['Montserrat']">
+<div id="global-footer" class="scroll-mt-20"><footer id="footer" class="py-12 bg-slate-950 border-t border-slate-900 text-center">
     <div class="max-w-7xl mx-auto px-4">
         <div class="flex flex-col items-center gap-6">
-            <img src="https://jufjpzuzfftxyckfovmf.supabase.co/storage/v1/object/public/academy-attachments/Brand%20Elements/funnelcraftai%20logo%20dark.svg" alt="FunnelCraft AI" class="h-8 opacity-50 grayscale">
+            <img src="https://jufjpzuzfftxyckfovmf.supabase.co/storage/v1/object/public/academy-attachments/Brand%20Elements/funnelcraftai%20logo%20dark.svg" alt="FunnelCraft AI" class="h-8 opacity-50 grayscale hover:grayscale-0 transition-all duration-500">
             
             <div class="flex gap-6">
-                <a href="https://facebook.com/osazeekelvinking" class="text-slate-500 hover:text-emerald-400 transition-colors text-xl"><i class="fab fa-facebook-f"></i></a>
-                <a href="https://instagram.com/osazeekelvinking" class="text-slate-500 hover:text-emerald-400 transition-colors text-xl"><i class="fab fa-instagram"></i></a>
-                <a href="https://www.linkedin.com/in/kelvinkingofficial/" class="text-slate-500 hover:text-emerald-400 transition-colors text-xl"><i class="fab fa-linkedin-in"></i></a>
+                <a href="https://facebook.com/osazeekelvinking" class="text-slate-500 hover:text-emerald-400 transition-colors"><i class="fab fa-facebook-f"></i></a>
+                <a href="#" class="text-slate-500 hover:text-emerald-400 transition-colors"><i class="fab fa-twitter"></i></a>
+                <a href="https://instagram.com/osazeekelvinking" class="text-slate-500 hover:text-emerald-400 transition-colors"><i class="fab fa-instagram"></i></a>
+                <a href="https://www.linkedin.com/in/kelvinkingofficial/" class="text-slate-500 hover:text-emerald-400 transition-colors"><i class="fab fa-linkedin-in"></i></a>
             </div>
 
             <nav class="flex flex-wrap justify-center gap-x-8 gap-y-4 text-xs font-bold uppercase tracking-widest text-slate-600">
@@ -650,34 +961,6 @@
             </div>
         </div>
     </div>
-
-    <!-- Entrance Animation Script -->
-    <script>
-        const initReveal = () => {
-            const observerOptions = {
-                threshold: 0.1,
-                rootMargin: '0px 0px -50px 0px'
-            };
-
-            const observer = new IntersectionObserver((entries) => {
-                entries.forEach(entry => {
-                    if (entry.isIntersecting) {
-                        entry.target.classList.add('active');
-                    }
-                });
-            }, observerOptions);
-
-            document.querySelectorAll('.reveal').forEach(section => {
-                observer.observe(section);
-            });
-        };
-
-        if (document.readyState !== 'loading') {
-            initReveal();
-        } else {
-            document.addEventListener('DOMContentLoaded', initReveal);
-        }
-    </script>
 </footer></div>
 <!-- WhatsApp Chat Widget -->
 <div id="fc-whatsapp-widget" style="position:fixed;bottom:20px;right:20px;z-index:99999;"><a href="https://wa.me/2347054503365?text=Hello%20Kelvin%2C%20I'm%20interested%20in%20your%20website%20d" target="_blank" rel="noopener noreferrer" style="background:#25D366;color:white;width:50px;height:50px;border-radius:50%;display:flex;align-items:center;justify-content:center;text-decoration:none;"><i class="fab fa-whatsapp" style="font-size:24px;"></i></a></div>
