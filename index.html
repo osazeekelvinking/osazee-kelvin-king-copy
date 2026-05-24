@@ -12,14 +12,8 @@
 <script src="https://cdn.tailwindcss.com"></script>
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;900&family=Montserrat:wght@400;700&family=Playfair+Display:wght@400;700&family=Roboto:wght@400;700&family=Open+Sans:wght@400;700&family=Bebas+Neue&family=Oswald:wght@400;700&family=Lora:wght@400;700&family=Raleway:wght@400;700&family=Poppins:wght@400;700&family=Lato:wght@400;700&family=Cinzel:wght@400;700&family=Merriweather:wght@400;700&family=Pacifico&family=Outfit:wght@400;700&family=Kanit:wght@400;700&family=Righteous&family=Dancing+Script:wght@400;700&family=Libre+Baskerville:wght@400;700&family=Anton&family=Josefin+Sans:wght@400;700&family=Caveat:wght@400;700&family=Fira+Sans:wght@400;700&family=Quicksand:wght@400;700&family=Abril+Fatface&family=Lobster&family=Patrick+Hand&family=Comfortaa:wght@400;700&family=Unbounded:wght@400;700&family=Space+Grotesk:wght@400;700&display=swap" rel="stylesheet">
-<style>
-  html { scroll-behavior: smooth; }
-  body { font-family: 'Inter', sans-serif; }
-  html, body { overflow-x: clip; }
-</style>
 <script>
-  tailwind.config = { darkMode: 'class', theme: { extend: { colors: { indigo: { 50: '#f5f7ff', 100: '#ebf0ff', 500: '#6366f1', 600: '#4f46e5', 700: '#4338ca', 900: '#312e81' }, slate: { 850: '#111827', 950: '#020617' } } } } }
-</script>
+  (function() {let isEditor = false; try { if (window.self !== window.top) { isEditor = true; try { const parentUrl = window.parent.location.href; if (parentUrl && (parentUrl.includes('editor') || parentUrl.includes('systeme.io') || parentUrl.includes('builder') || parentUrl.includes('funnelcraft'))) { isEditor = true; } } catch (crossOriginErr) { isEditor = true; } } } catch (e) { isEditor = true; } if (!isEditor) { isEditor = window.location.href.includes('systeme.io/editor') || window.location.pathname.includes('/editor') || window.location.pathname.includes('/edit') || window.location.hostname.includes('editor') || !!document.getElementById('editor-app') || !!document.querySelector('[class*="editor"]') || !!window.angular; } window.tailwind = window.tailwind || {};window.tailwind.config = {darkMode: 'class',corePlugins: {preflight: !isEditor},theme: {extend: {colors: {indigo: { 50: '#f5f7ff', 100: '#ebf0ff', 500: '#6366f1', 600: '#4f46e5', 700: '#4338ca', 900: '#312e81' },slate: { 850: '#111827', 950: '#020617' }}}}};const style = document.createElement('style');if (!isEditor) {style.innerHTML = "html { scroll-behavior: smooth; } body { font-family: 'Inter', sans-serif; } html, body { overflow-x: clip; }";} else {style.innerHTML = ".scroll-mt-20 { font-family: 'Inter', sans-serif; } .scroll-mt-20 [class*='reveal'], .contents [class*='reveal'], .scroll-mt-20 [class*='fade'], .contents [class*='fade'], .scroll-mt-20 [class*='animate'], .contents [class*='animate'], .scroll-mt-20 [class*='opacity-0'], .contents [class*='opacity-0'], .scroll-mt-20 [class*='slide'], .contents [class*='slide'], .scroll-mt-20 [class*='scroll'], .contents [class*='scroll'], .scroll-mt-20 [id*='reveal'], .contents [id*='reveal'], .scroll-mt-20 [id*='fade'], .contents [id*='fade'], .scroll-mt-20 [id*='animate'], .contents [id*='animate'], .scroll-mt-20 [id*='slide'], .contents [id*='slide'], .scroll-mt-20 [id*='scroll'], .contents [id*='scroll'], .scroll-mt-20 [style*='opacity'], .contents [style*='opacity'], .scroll-mt-20 [style*='transform'], .contents [style*='transform'], .scroll-mt-20 [style*='visibility'], .contents [style*='visibility'], .scroll-mt-20 [style*='transition'], .contents [style*='transition'], .scroll-mt-20 > *, .contents > * { opacity: 1 !important; transform: none !important; visibility: visible !important; transition: none !important; }";}document.head.appendChild(style);})();</script>
 </head>
 <body class="bg-white text-slate-900">
 
@@ -683,7 +677,7 @@
 <div id="client-testimonials" class="scroll-mt-20"><section id="reviews" class="py-24 bg-slate-950 grid-bg">
     <div class="max-w-7xl mx-auto px-4 md:px-6">
         <div class="text-center mb-16">
-            <h2 class="text-emerald-500 font-bold tracking-widest text-sm uppercase mb-4">Proof & Endorsements</h2>
+            <h2 class="text-emerald-500 font-bold tracking-widest text-sm uppercase mb-4">Proof &amp; Endorsements</h2>
             <h3 class="text-3xl md:text-5xl font-extrabold text-white">What My Clients Say</h3>
         </div>
 
@@ -697,8 +691,8 @@
                 <div class="flex items-center gap-4">
                     <img src="https://zjmrfknhxmjasbglrebj.supabase.co/storage/v1/object/public/brand/cnzo9404rx-1778120229368.webp" alt="Osaro Destiny" class="w-12 h-12 rounded-full object-cover">
                     <div>
-                        <h4 class="text-white font-bold">Osaro Destiny</h4>
-                        <p class="text-slate-500 text-xs uppercase tracking-widest">CEO, Ekiema Wellness</p>
+                        <h4 class="text-white font-bold lg:text-white lg:font-[''Inter',_sans-serif']">Marvin</h4>
+                        <p class="text-slate-500 text-xs uppercase tracking-widest lg:text-slate-500 lg:font-[''Inter',_sans-serif'] lg:text-[12px] lg:tracking-widest">Ecommerce Expert</p>
                     </div>
                     <div class="ml-auto flex text-emerald-400 text-xs">
                         <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
@@ -715,7 +709,7 @@
                     <img src="https://zjmrfknhxmjasbglrebj.supabase.co/storage/v1/object/public/brand/cnzo9404rx-1778120229368.webp" alt="Jonathan" class="w-12 h-12 rounded-full object-cover">
                     <div>
                         <h4 class="text-white font-bold">Jonathan</h4>
-                        <p class="text-slate-500 text-xs uppercase tracking-widest">CEO, Goldchek Herbals</p>
+                        <p class="text-slate-500 text-xs uppercase tracking-widest lg:text-slate-500 lg:font-[''Inter',_sans-serif'] lg:text-[12px] lg:tracking-widest">Ecommerce Business Owner</p>
                     </div>
                     <div class="ml-auto flex text-emerald-400 text-xs">
                         <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
